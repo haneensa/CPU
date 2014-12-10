@@ -1,0 +1,10 @@
+[Inputs]
+clk
+reset
+en
+r_w
+=addr[2:0]=
+=din[31:0]=
+[Outputs]
+=dout[31:0]=
+[BiDir]
