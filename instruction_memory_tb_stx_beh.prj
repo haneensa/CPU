@@ -1,0 +1,2 @@
+vhdl isim_temp "instruction_memory.vhd"
+vhdl isim_temp "instruction_memory_tb.vhd"
