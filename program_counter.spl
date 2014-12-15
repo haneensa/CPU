@@ -1,0 +1,9 @@
+[Inputs]
+clk
+reset
+crl
+en_A
+=din[3:0]=
+[Outputs]
+=addr[3:0]=
+[BiDir]

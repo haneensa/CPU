@@ -23,8 +23,8 @@ ARCHITECTURE behavior OF program_counter_tb IS
          reset : IN  std_logic;
          crl : IN  std_logic;
          en_A : IN  std_logic;
-         din : IN  std_logic_vector(15 downto 0);
-         addr : OUT  std_logic_vector(15 downto 0)
+         din : IN  std_logic_vector(3 downto 0);
+         addr : OUT  std_logic_vector(3 downto 0)
         );
     END COMPONENT;
     
@@ -34,10 +34,10 @@ ARCHITECTURE behavior OF program_counter_tb IS
    signal reset : std_logic := '1';
    signal crl : std_logic := '0';
    signal en_A : std_logic := '0';
-   signal din : std_logic_vector(15 downto 0) := (others => '0');
+   signal din : std_logic_vector(3 downto 0) := (others => '0');
 
  	--Outputs
-   signal addr : std_logic_vector(15 downto 0);
+   signal addr : std_logic_vector(3 downto 0);
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
@@ -86,7 +86,7 @@ BEGIN
 
 		wait for clk_period;
          crl <= '1';	
-         din <= x"1111";	
+         din <= "1111";	
       wait;
    end process;
 

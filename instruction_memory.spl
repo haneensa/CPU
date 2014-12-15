@@ -1,0 +1,7 @@
+[Inputs]
+clk
+en
+=addr[3:0]=
+[Outputs]
+=dout[15:0]=
+[BiDir]

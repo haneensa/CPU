@@ -1,0 +1,3 @@
+vhdtdtfi -lib work program_counter.vhd -prj CPU1 -o program_counter.spl -module program_counter -template C:/Xilinx/14.5/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family aartix7 program_counter.spl C:/Users/aisha/CPU1/program_counter.sym 
+xst -intstyle ise -ifn "C:/Users/aisha/CPU1/program_counter.xst" -ofn "C:/Users/aisha/CPU1/program_counter.syr" 

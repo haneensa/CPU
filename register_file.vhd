@@ -10,9 +10,9 @@ use IEEE.std_logic_arith.all;
 entity register_file is
 port (
     clk, reset, en, r_w : IN STD_LOGIC;
-	 addr : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+	 addrA, addrB : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     din : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    dout : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+    doutA, doutB : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
 );
 end register_file;
 
@@ -27,11 +27,14 @@ begin
 				reg_file(i) <= "00000000000000000000000000000000"; -- initialize
 			end loop;
 		elsif r_w'event and r_w = '0' and en='1' then  -- write enabled
-			reg_file(conv_integer(Unsigned(addr))) <= din;
+			reg_file(conv_integer(Unsigned(addrA))) <= din;
+			reg_file(conv_integer(Unsigned(addrB))) <= din;
 		end if;
 	end process;
-	 
-	dout <= reg_file(conv_integer(Unsigned(addr)))
+	doutA <= reg_file(conv_integer(Unsigned(addrA)))
+	when reset = '0' and en = '1' and r_w = '1' else -- read enabled
+	"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
+	doutB <= reg_file(conv_integer(Unsigned(addrB)))
 	when reset = '0' and en = '1' and r_w = '1' else -- read enabled
 	"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
 

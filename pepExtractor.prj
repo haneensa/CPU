@@ -1,1 +1,4 @@
+work	"instruction_memory.vhd"
+work	"instruction_register.vhd"
 work	"program_counter.vhd"
+work	"top.vhd"
