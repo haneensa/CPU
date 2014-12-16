@@ -84,9 +84,27 @@ signal en_reg, r_w :std_logic;
 
 begin
 
-	pc: program_counter port map(clk, reset, crl_pc, en_pc, din_pc,  addr_pc);
-	irm: instruction_memory port map(clk, en_irm, addr_pc, dout_irm);
-	ir: instruction_register port map(clk, en_ir, dout_irm, dout_ir);
+
+	pc: program_counter port map(
+			clk => clk,
+         reset =>   reset,
+         crl=>   crl_pc,
+         en_A =>   en_pc,
+         din =>   din_pc,
+         addr =>   addr_pc
+			);
+	irm: instruction_memory port map(
+			clk => clk,
+         en  => en_irm,
+         addr  => addr_pc,
+         dout => dout_irm
+	);
+	ir: instruction_register port map(
+				clk => clk,
+				en => en_ir,
+				din => dout_irm,
+				dout => dout_ir
+  );
 	--ram: RAM port map(clk, wea, addra, dina, douta);
 	--file_rg: register_file port map(clk, reset, en_reg, r_w, addr_reg, din_reg, dout_reg);
 
