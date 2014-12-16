@@ -81,14 +81,14 @@ LAB2:    xsi_set_current_line(28, ng0);
 LAB10:    t2 = (t0 + 1352U);
     t4 = *((char **)t2);
     t1 = *((unsigned char *)t4);
-    t3 = (t1 == (unsigned char)3);
+    t3 = (t1 == (unsigned char)2);
     if (t3 != 0)
         goto LAB11;
 
 LAB12:    t2 = (t0 + 1352U);
     t4 = *((char **)t2);
     t1 = *((unsigned char *)t4);
-    t3 = (t1 == (unsigned char)2);
+    t3 = (t1 == (unsigned char)3);
     if (t3 != 0)
         goto LAB13;
 

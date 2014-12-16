@@ -5,6 +5,33 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="871" delta="new" >"C:\Users\aisha\CPU1\top.vhd" Line 69: Using initial value <arg fmt="%s" index="1">&apos;1&apos;</arg> for <arg fmt="%s" index="2">crl_pc</arg> since it is never assigned
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="871" delta="new" >"C:\Users\aisha\CPU1\top.vhd" Line 72: Using initial value <arg fmt="%s" index="1">&apos;1&apos;</arg> for <arg fmt="%s" index="2">en_irm</arg> since it is never assigned
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="871" delta="new" >"C:\Users\aisha\CPU1\top.vhd" Line 75: Using initial value <arg fmt="%s" index="1">&apos;1&apos;</arg> for <arg fmt="%s" index="2">en_ir</arg> since it is never assigned
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\Users\aisha\CPU1\top.vhd" Line 68: Net &lt;<arg fmt="%s" index="1">din_pc[3]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">87</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">pc</arg>&gt; of block &lt;<arg fmt="%s" index="4">program_counter</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">88</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">irm</arg>&gt; of block &lt;<arg fmt="%s" index="4">instruction_memory</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">89</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ir</arg>&gt; of block &lt;<arg fmt="%s" index="4">instruction_register</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%s" index="2">89</arg>: Output port &lt;<arg fmt="%s" index="3">dout</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ir</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">din_pc</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
 <msg type="warning" file="Xst" num="0" delta="new" >The specified part-type was not generated at build time. XST is loading the full part-type and will therefore consume more CPU and memory.
 </msg>
 

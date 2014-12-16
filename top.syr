@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Reading design: top.prj
 
@@ -108,12 +108,12 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\aisha\CPU1\ipcore_dir\main_memory.vhd" into library work
-Parsing entity <main_memory>.
-Parsing architecture <main_memory_a> of entity <main_memory>.
 Parsing VHDL file "C:\Users\aisha\CPU1\program_counter.vhd" into library work
 Parsing entity <program_counter>.
 Parsing architecture <Behavioral> of entity <program_counter>.
+Parsing VHDL file "C:\Users\aisha\CPU1\ipcore_dir\main_memory.vhd" into library work
+Parsing entity <main_memory>.
+Parsing architecture <main_memory_a> of entity <main_memory>.
 Parsing VHDL file "C:\Users\aisha\CPU1\instruction_register.vhd" into library work
 Parsing entity <instruction_register>.
 Parsing architecture <Behavioral> of entity <instruction_register>.
@@ -129,6 +129,9 @@ Parsing architecture <Behavioral> of entity <top>.
 =========================================================================
 
 Elaborating entity <top> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "C:\Users\aisha\CPU1\top.vhd" Line 69: Using initial value '1' for crl_pc since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\aisha\CPU1\top.vhd" Line 72: Using initial value '1' for en_irm since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\aisha\CPU1\top.vhd" Line 75: Using initial value '1' for en_ir since it is never assigned
 
 Elaborating entity <program_counter> (architecture <Behavioral>) from library <work>.
 
@@ -136,9 +139,6 @@ Elaborating entity <instruction_memory> (architecture <Behavioral>) from library
 
 Elaborating entity <instruction_register> (architecture <Behavioral>) from library <work>.
 WARNING:HDLCompiler:634 - "C:\Users\aisha\CPU1\top.vhd" Line 68: Net <din_pc[3]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Users\aisha\CPU1\top.vhd" Line 69: Net <crl_pc> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Users\aisha\CPU1\top.vhd" Line 72: Net <en_irm> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Users\aisha\CPU1\top.vhd" Line 75: Net <en_ir> does not have a driver.
 WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 87. All outputs of instance <pc> of block <program_counter> are unconnected in block <top>. Underlying logic will be removed.
 WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 88. All outputs of instance <irm> of block <instruction_memory> are unconnected in block <top>. Underlying logic will be removed.
 WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 89. All outputs of instance <ir> of block <instruction_register> are unconnected in block <top>. Underlying logic will be removed.
@@ -151,10 +151,6 @@ Synthesizing Unit <top>.
     Related source file is "C:\Users\aisha\CPU1\top.vhd".
 INFO:Xst:3210 - "C:\Users\aisha\CPU1\top.vhd" line 89: Output port <dout> of the instance <ir> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <din_pc> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <crl_pc> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <en_pc> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <en_irm> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <en_ir> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <top> synthesized.
@@ -283,14 +279,14 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 51.00 secs
-Total CPU time to Xst completion: 51.37 secs
+Total REAL time to Xst completion: 46.00 secs
+Total CPU time to Xst completion: 46.18 secs
  
 --> 
 
 Total memory usage is 757300 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   13 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
 Number of infos    :    1 (   0 filtered)
 

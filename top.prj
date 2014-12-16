@@ -1,5 +1,5 @@
-vhdl work "ipcore_dir/main_memory.vhd"
 vhdl work "program_counter.vhd"
+vhdl work "ipcore_dir/main_memory.vhd"
 vhdl work "instruction_register.vhd"
 vhdl work "instruction_memory.vhd"
 vhdl work "top.vhd"

@@ -66,13 +66,14 @@ signal dbus :std_logic_vector(31 downto 0);
 	 
 -- signals for PC	 
 signal addr_pc, din_pc :std_logic_vector(3 downto 0);
-signal crl_pc, en_pc :std_logic;
+signal crl_pc, en_pc :std_logic:='1';
+
 -- signals for Instruction Memory	 
 signal dout_irm :std_logic_vector(15 downto 0);
-signal en_irm :std_logic;
+signal en_irm :std_logic:='1';
 -- signals for Instruction Reg	 
 signal dout_ir :std_logic_vector(15 downto 0);
-signal en_ir :std_logic;
+signal en_ir :std_logic:='1';
 -- signals for Instruction Reg	 
 signal addra :std_logic_vector(7 downto 0);
 signal dina, douta :std_logic_vector(31 downto 0);
@@ -83,7 +84,7 @@ signal din_reg, dout_reg :std_logic_vector(31 downto 0);
 signal en_reg, r_w :std_logic;
 
 begin
-
+ 
 	pc: program_counter port map(clk, reset, crl_pc, en_pc, din_pc,  addr_pc);
 	irm: instruction_memory port map(clk, en_irm, addr_pc, dout_irm);
 	ir: instruction_register port map(clk, en_ir, dout_irm, dout_ir);

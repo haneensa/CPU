@@ -27,9 +27,9 @@ begin
 		if clk'event and clk = '1' then
 			if reset = '1' then 
 				pcReg <= "0000";
-			elsif crl = '1' then -- ctr value from uController from instruction
+			elsif crl = '0' then -- ctr value from uController from instruction
 				pcReg <= din;
-			elsif crl = '0' then 
+			elsif crl = '1' then 
 				pcReg <= pcReg + "0001";
 			end if;
 		end if;
