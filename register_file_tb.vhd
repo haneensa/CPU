@@ -19,7 +19,7 @@ END register_file_tb;
 ARCHITECTURE behavior OF register_file_tb IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
- 
+  
     COMPONENT register_file
     PORT(
          clk : IN  std_logic;
@@ -84,7 +84,7 @@ BEGIN
    begin		
            -- hold reset state for 100 ns.
       wait for 100 ns;	
-		     reset <= '0';
+		    reset <= '0';
           en <= '1';
           r_w <= '1'; -- write enable
           addr <= "000";
@@ -102,10 +102,10 @@ BEGIN
           din <= x"AAA01FFF";
 		wait for clk_period;
           r_w <= '0'; -- read enable
-          addrA <= "010";
+          addrB <= "010";
 
 		wait for clk_period;
-          addrB <= "011";
+          addrA <= "011";
       wait for clk_period;
           addrB <= "000";
 

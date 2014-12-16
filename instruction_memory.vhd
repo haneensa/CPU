@@ -30,6 +30,8 @@ port (
     dout : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
 );
 end instruction_memory;
+ 
+	
 
 architecture Behavioral of instruction_memory is
 

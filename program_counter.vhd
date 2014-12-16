@@ -17,6 +17,10 @@ port (
 	addr: out STD_LOGIC_VECTOR(3 downto 0)
 
 );
+
+	 
+	
+	
 end program_counter;
 
 architecture Behavioral of program_counter is

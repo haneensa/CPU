@@ -1,19 +1,22 @@
-Running: C:\Xilinx\14.5\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/aisha/CPU1/register_file_tb_isim_beh.exe -prj C:/Users/aisha/CPU1/register_file_tb_beh.prj work.register_file_tb 
+Running: C:\Xilinx\14.5\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/aisha/CPU1/alu_tb_isim_beh.exe -prj C:/Users/aisha/CPU1/alu_tb_beh.prj work.alu_tb 
 ISim P.58f (signature 0x7708f090)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/aisha/CPU1/register_file.vhd" into library work
-Parsing VHDL file "C:/Users/aisha/CPU1/register_file_tb.vhd" into library work
+Parsing VHDL file "C:/Users/aisha/CPU1/ALU.vhd" into library work
+Parsing VHDL file "C:/Users/aisha/CPU1/alu_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
+Compiling package numeric_std
 Compiling package std_logic_arith
-Compiling architecture regarch of entity register_file [register_file_default]
-Compiling architecture behavior of entity register_file_tb
+Compiling package std_logic_unsigned
+Compiling architecture behavioral of entity ALU [alu_default]
+Compiling architecture behavior of entity alu_tb
 Time Resolution for simulation is 1ps.
-Compiled 6 VHDL Units
-Built simulation executable C:/Users/aisha/CPU1/register_file_tb_isim_beh.exe
-Fuse Memory Usage: 32280 KB
-Fuse CPU Usage: 608 ms
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 8 VHDL Units
+Built simulation executable C:/Users/aisha/CPU1/alu_tb_isim_beh.exe
+Fuse Memory Usage: 35276 KB
+Fuse CPU Usage: 718 ms

@@ -3,13 +3,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: RAM.prj
@@ -108,12 +108,12 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\aisha\CPU1\ipcore_dir\main_memory.vhd" into library work
-Parsing entity <main_memory>.
-Parsing architecture <main_memory_a> of entity <main_memory>.
 Parsing VHDL file "C:\Users\aisha\CPU1\main_memory.vhd" into library work
 Parsing entity <RAM>.
 Parsing architecture <coregen> of entity <ram>.
+Parsing VHDL file "C:\Users\aisha\CPU1\ipcore_dir\main_memory.vhd" into library work
+Parsing entity <main_memory>.
+Parsing architecture <main_memory_a> of entity <main_memory>.
 
 =========================================================================
 *                            HDL Elaboration                            *
@@ -316,12 +316,12 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 41.00 secs
-Total CPU time to Xst completion: 41.24 secs
+Total REAL time to Xst completion: 40.00 secs
+Total CPU time to Xst completion: 39.98 secs
  
 --> 
 
-Total memory usage is 757300 kilobytes
+Total memory usage is 757364 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

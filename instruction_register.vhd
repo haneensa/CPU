@@ -14,15 +14,16 @@ use IEEE.std_logic_arith.all;
 entity instruction_register is
 port(
 	 clk,  en: IN STD_LOGIC;
-	 din : IN STD_LOGIC_VECTOR(15 DOWNTO 0); --from 
-    dout : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+    dbus : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
 	 );
 end instruction_register;
-
+ 
 architecture Behavioral of instruction_register is
+
+signal IR: STD_LOGIC_VECTOR(15 downto 0);
 	
 begin
-	dout <= din
+	IR <= dbus
 	when  en = '1'  else -- when read enabled
 	"ZZZZZZZZZZZZZZZZ";
 end Behavioral;

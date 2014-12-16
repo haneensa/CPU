@@ -12,8 +12,7 @@ port (
 		-- r_w = 0 then read enable else write
     clk, reset, en, r_w : IN STD_LOGIC;
 	 -- for read operation
-	 addrA, addrB : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-	 doutA, doutB : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	 dout : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     -- for write 
     addr : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
 	 din : IN STD_LOGIC_VECTOR(31 DOWNTO 0)
@@ -35,12 +34,10 @@ begin
 		end if;
 	end process;
 	
-	doutA <= reg_file(conv_integer(Unsigned(addrA)))
+	dout <= reg_file(conv_integer(Unsigned(addr)))
 	when reset = '0' and en = '1' and r_w = '0' else -- read enabled
 	"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
-	doutB <= reg_file(conv_integer(Unsigned(addrB)))
-	when reset = '0' and en = '1' and r_w = '0' else -- read enabled
-	"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
+	
 
 end regArch;
 
