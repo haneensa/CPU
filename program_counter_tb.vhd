@@ -22,19 +22,19 @@ ARCHITECTURE behavior OF program_counter_tb IS
          clk : IN  std_logic;
          reset : IN  std_logic;
          crl : IN  std_logic;
-         en_A : IN  std_logic;
-         din : IN  std_logic_vector(3 downto 0);
+         en : IN  std_logic;
+         newAddr : IN  std_logic_vector(3 downto 0);
          addr : OUT  std_logic_vector(3 downto 0)
         );
     END COMPONENT;
-    
+   
 
    --Inputs
    signal clk : std_logic := '0';
    signal reset : std_logic := '1';
    signal crl : std_logic := '0';
-   signal en_A : std_logic := '0';
-   signal din : std_logic_vector(3 downto 0) := (others => '0');
+   signal en : std_logic := '0';
+   signal newAddr : std_logic_vector(3 downto 0) := (others => '0');
 
  	--Outputs
    signal addr : std_logic_vector(3 downto 0);
@@ -49,8 +49,8 @@ BEGIN
           clk => clk,
           reset => reset,
           crl => crl,
-          en_A => en_A,
-          din => din,
+          en  => en ,
+          newAddr => newAddr,
           addr => addr
         );
 
@@ -72,21 +72,13 @@ BEGIN
 		report "Hello World";
 		
       -- insert stimulus here 
-			en_A <= '1';
-			reset <= '0';
-         crl <= '0';	
-		wait for clk_period;
-		         crl <= '0';	
-
-		wait for clk_period;
-		         crl <= '0';	
-
-		wait for clk_period;
-		         crl <= '0';	
-
-		wait for clk_period;
-         crl <= '1';	
-         din <= "1111";	
+		en  <= '1';
+		reset <= '0';
+      crl <= '0';	wait for clk_period;
+		crl <= '0';	wait for clk_period;
+		crl <= '0';	wait for clk_period;
+		crl <= '0';	wait for clk_period;
+      crl <= '1';	newAddr <= "1111";	
       wait;
    end process;
 

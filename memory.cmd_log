@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/aisha/CPU1/memory.xst" -ofn "C:/Users/aisha/CPU1/memory.syr" 

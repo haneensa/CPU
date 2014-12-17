@@ -3,13 +3,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: instruction_memory.prj
@@ -128,22 +128,22 @@ Elaborating entity <instruction_memory> (architecture <Behavioral>) from library
 Synthesizing Unit <instruction_memory>.
     Related source file is "C:\Users\aisha\CPU1\instruction_memory.vhd".
 WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 1-bit tristate buffer for signal <dout<15>> created at line 59
-    Found 1-bit tristate buffer for signal <dout<14>> created at line 59
-    Found 1-bit tristate buffer for signal <dout<13>> created at line 59
-    Found 1-bit tristate buffer for signal <dout<12>> created at line 59
-    Found 1-bit tristate buffer for signal <dout<11>> created at line 59
-    Found 1-bit tristate buffer for signal <dout<10>> created at line 59
-    Found 1-bit tristate buffer for signal <dout<9>> created at line 59
-    Found 1-bit tristate buffer for signal <dout<8>> created at line 59
-    Found 1-bit tristate buffer for signal <dout<7>> created at line 59
-    Found 1-bit tristate buffer for signal <dout<6>> created at line 59
-    Found 1-bit tristate buffer for signal <dout<5>> created at line 59
-    Found 1-bit tristate buffer for signal <dout<4>> created at line 59
-    Found 1-bit tristate buffer for signal <dout<3>> created at line 59
-    Found 1-bit tristate buffer for signal <dout<2>> created at line 59
-    Found 1-bit tristate buffer for signal <dout<1>> created at line 59
-    Found 1-bit tristate buffer for signal <dout<0>> created at line 59
+    Found 1-bit tristate buffer for signal <dout<15>> created at line 61
+    Found 1-bit tristate buffer for signal <dout<14>> created at line 61
+    Found 1-bit tristate buffer for signal <dout<13>> created at line 61
+    Found 1-bit tristate buffer for signal <dout<12>> created at line 61
+    Found 1-bit tristate buffer for signal <dout<11>> created at line 61
+    Found 1-bit tristate buffer for signal <dout<10>> created at line 61
+    Found 1-bit tristate buffer for signal <dout<9>> created at line 61
+    Found 1-bit tristate buffer for signal <dout<8>> created at line 61
+    Found 1-bit tristate buffer for signal <dout<7>> created at line 61
+    Found 1-bit tristate buffer for signal <dout<6>> created at line 61
+    Found 1-bit tristate buffer for signal <dout<5>> created at line 61
+    Found 1-bit tristate buffer for signal <dout<4>> created at line 61
+    Found 1-bit tristate buffer for signal <dout<3>> created at line 61
+    Found 1-bit tristate buffer for signal <dout<2>> created at line 61
+    Found 1-bit tristate buffer for signal <dout<1>> created at line 61
+    Found 1-bit tristate buffer for signal <dout<0>> created at line 61
     Summary:
 	inferred  16 Tristate(s).
 Unit <instruction_memory> synthesized.
@@ -304,12 +304,12 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 40.00 secs
-Total CPU time to Xst completion: 40.96 secs
+Total REAL time to Xst completion: 42.00 secs
+Total CPU time to Xst completion: 41.21 secs
  
 --> 
 
-Total memory usage is 760116 kilobytes
+Total memory usage is 756004 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    2 (   0 filtered)

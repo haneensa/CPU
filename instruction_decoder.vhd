@@ -5,6 +5,14 @@
 -- Project Name: 
 -- Description: take the instruction from the IR and decode the instruction then sends the 
 -- relevent data to ALU or control unit or Registers
+-- EXAMPLE: 
+-- XOR R5 R1 R2 : R5 = R1 xor R2
+-- ADDI R5 R1 0x50 : R5 = R1 + 0x50
+-- LOAD R3 (R1) : R3 = DataMem[R1]
+-- STORE R3 (R1) : DataMem[R1] = R3
+-- BNEQ R2 R5 i4 : if (R2 != R5) jump to instruction i4
+-- BLT R3 R4 i9 : if (R3 < R4) jump to insturtion i9
+-- EOP 
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -15,8 +23,10 @@ port(
 	 clk, reset, en: IN STD_LOGIC;
     dbus : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	 -- control flags from the decoder
-	 zor, addi, load, store, blt, bneq, eop: out STD_LOGIC;
-	 opcode: out  STD_LOGIC_VECTOR(2 DOWNTO 0)
+	 opcode: out  STD_LOGIC_VECTOR(2 DOWNTO 0); -- to alu
+	 op1, op2: out  STD_LOGIC_VECTOR(2 DOWNTO 0); -- to alu
+	 op3: out  STD_LOGIC_VECTOR(6 DOWNTO 0) -- to alu when xor and addi 
+	 -- to memory when load or store 
 
 	 );
 end instruction_decoder;
@@ -39,19 +49,9 @@ begin
   -- opcode 
   	 opcode <= IR(15 downto 13) ;
 	-- operands 
-	 opA <= IR(15 downto 13) ;
-	 opB<= IR(15 downto 13) ;
-
-  -- opcode flags  
-  zor  <= '1' when IR(15 downto 13) = "000" 	else '0';
-  addi     <= '1' when IR(15 downto 13) = "001" 	else '0';
-  load    <= '1' when IR(15 downto 13) = "010"	else '0';
-  store   <= '1' when IR(15 downto 13) = "011" 	else '0';
-  blt  <= '1' when IR(15 downto 13) = "100" 	else '0';
-  bneq  <= '1' when IR(15 downto 13) = "101" 	else '0';
-  eop    <= '1' when IR(15 downto 13) = "110" 	else '0';
-  -- deal with the operands
-  
+	 op1 <= IR(12 downto 10);
+	 op2 <= IR(9 downto 7);
+  	 op3 <= IR(6 downto 0);
 	
 end Behavioral;
 

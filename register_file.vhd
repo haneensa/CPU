@@ -29,7 +29,7 @@ begin
 			for i in 0 to 7 loop
 				reg_file(i) <= "00000000000000000000000000000000"; -- initialize
 			end loop;
-		elsif r_w'event and r_w = '1' and en='1' then  -- write enabled
+		elsif clk'event and clk = '0'  and r_w = '1' and en='1' then  -- write enabled
 			reg_file(conv_integer(Unsigned(addr))) <= din;
 		end if;
 	end process;

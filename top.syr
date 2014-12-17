@@ -114,6 +114,9 @@ Parsing architecture <Behavioral> of entity <program_counter>.
 Parsing VHDL file "C:\Users\aisha\CPU1\ipcore_dir\main_memory.vhd" into library work
 Parsing entity <main_memory>.
 Parsing architecture <main_memory_a> of entity <main_memory>.
+Parsing VHDL file "C:\Users\aisha\CPU1\instruction_memory.vhd" into library work
+Parsing entity <instruction_memory>.
+Parsing architecture <Behavioral> of entity <instruction_memory>.
 Parsing VHDL file "C:\Users\aisha\CPU1\top.vhd" into library work
 Parsing entity <top>.
 Parsing architecture <Behavioral> of entity <top>.
@@ -123,11 +126,15 @@ Parsing architecture <Behavioral> of entity <top>.
 =========================================================================
 
 Elaborating entity <top> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:871 - "C:\Users\aisha\CPU1\top.vhd" Line 69: Using initial value '1' for crl_pc since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\aisha\CPU1\top.vhd" Line 73: Using initial value '1' for crl_pc since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Users\aisha\CPU1\top.vhd" Line 77: Using initial value '1' for en_irm since it is never assigned
 
 Elaborating entity <program_counter> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:634 - "C:\Users\aisha\CPU1\top.vhd" Line 68: Net <din_pc[3]> does not have a driver.
-WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 89. All outputs of instance <pc> of block <program_counter> are unconnected in block <top>. Underlying logic will be removed.
+
+Elaborating entity <instruction_memory> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:634 - "C:\Users\aisha\CPU1\top.vhd" Line 72: Net <din_pc[3]> does not have a driver.
+WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 90. All outputs of instance <pc> of block <program_counter> are unconnected in block <top>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 99. All outputs of instance <irm> of block <instruction_memory> are unconnected in block <top>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -135,7 +142,9 @@ WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 89. All outputs of instanc
 
 Synthesizing Unit <top>.
     Related source file is "C:\Users\aisha\CPU1\top.vhd".
-INFO:Xst:3210 - "C:\Users\aisha\CPU1\top.vhd" line 89: Output port <addr> of the instance <pc> is unconnected or connected to loadless signal.
+WARNING:Xst:647 - Input <abus> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <dbus> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "C:\Users\aisha\CPU1\top.vhd" line 99: Output port <dbus> of the instance <irm> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <din_pc> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
@@ -215,7 +224,7 @@ Slice Logic Distribution:
    Number of unique control sets:         0
 
 IO Utilization: 
- Number of IOs:                           2
+ Number of IOs:                          42
  Number of bonded IOBs:                   0  out of    210     0%  
 
 Specific Feature Utilization:
@@ -265,14 +274,14 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 39.00 secs
-Total CPU time to Xst completion: 38.48 secs
+Total REAL time to Xst completion: 61.00 secs
+Total CPU time to Xst completion: 61.64 secs
  
 --> 
 
-Total memory usage is 757300 kilobytes
+Total memory usage is 753252 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    5 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
 Number of infos    :    1 (   0 filtered)
 

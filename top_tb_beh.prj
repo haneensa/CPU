@@ -1,0 +1,5 @@
+vhdl work "register_file.vhd"
+vhdl work "program_counter.vhd"
+vhdl work "instruction_memory.vhd"
+vhdl work "top.vhd"
+vhdl work "top_tb.vhd"

@@ -128,11 +128,11 @@ Elaborating entity <program_counter> (architecture <Behavioral>) from library <w
 Synthesizing Unit <program_counter>.
     Related source file is "C:\Users\aisha\CPU1\program_counter.vhd".
     Found 4-bit register for signal <pcReg>.
-    Found 4-bit adder for signal <pcReg[3]_GND_5_o_add_0_OUT> created at line 33.
-    Found 1-bit tristate buffer for signal <addr<3>> created at line 37
-    Found 1-bit tristate buffer for signal <addr<2>> created at line 37
-    Found 1-bit tristate buffer for signal <addr<1>> created at line 37
-    Found 1-bit tristate buffer for signal <addr<0>> created at line 37
+    Found 4-bit adder for signal <pcReg[3]_GND_5_o_add_0_OUT> created at line 36.
+    Found 1-bit tristate buffer for signal <addr<3>> created at line 40
+    Found 1-bit tristate buffer for signal <addr<2>> created at line 40
+    Found 1-bit tristate buffer for signal <addr<1>> created at line 40
+    Found 1-bit tristate buffer for signal <addr<0>> created at line 40
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   4 D-type flip-flop(s).
@@ -362,15 +362,15 @@ Timing constraint: Default path analysis
   Total number of paths / destination ports: 4 / 4
 -------------------------------------------------------------------------
 Delay:               0.809ns (Levels of Logic = 3)
-  Source:            en_A (PAD)
+  Source:            en (PAD)
   Destination:       addr<3> (PAD)
 
-  Data Path: en_A to addr<3>
+  Data Path: en to addr<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.001   0.339  en_A_IBUF (en_A_IBUF)
-     INV:I->O              4   0.113   0.356  en_A_inv1_INV_0 (en_A_inv)
+     IBUF:I->O             1   0.001   0.339  en_IBUF (en_IBUF)
+     INV:I->O              4   0.113   0.356  en_inv1_INV_0 (en_inv)
      OBUFT:T->O                0.000          addr_3_OBUFT (addr<3>)
     ----------------------------------------
     Total                      0.809ns (0.114ns logic, 0.695ns route)
@@ -393,11 +393,11 @@ clk            |    1.087|         |         |         |
 
 
 Total REAL time to Xst completion: 42.00 secs
-Total CPU time to Xst completion: 41.69 secs
+Total CPU time to Xst completion: 42.16 secs
  
 --> 
 
-Total memory usage is 760308 kilobytes
+Total memory usage is 748964 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

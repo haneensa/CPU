@@ -28,7 +28,8 @@ ARCHITECTURE behavior OF alu_tb IS
          dinB : IN  std_logic_vector(31 downto 0);
          opcode : IN  std_logic_vector(2 downto 0);
          result : OUT  std_logic_vector(31 downto 0);
-         flag : OUT  std_logic
+         flag: OUT  std_logic
+			
         );
     END COMPONENT;
     
@@ -42,7 +43,7 @@ ARCHITECTURE behavior OF alu_tb IS
 
  	--Outputs
    signal result : std_logic_vector(31 downto 0);
-   signal flag : std_logic;
+   signal flag: std_logic;
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
@@ -57,8 +58,9 @@ BEGIN
           dinB => dinB,
           opcode => opcode,
           result => result,
-          flag => flag
-        );
+           flag => flag
+
+			 );
 
    -- Clock process definitions
    clk_process :process
@@ -69,29 +71,45 @@ BEGIN
 		wait for clk_period/2;
    end process;
  
-
    -- Stimulus process
    stim_proc: process
    begin		
       wait for 100 ns;	
 		   reset <= '0';
+			-- XOR result dinA dinA : result = dinA xor dinB
 			dinA  <=  x"ffffffff";
 			dinB <=  x"aaaaaaaa";
-			opcode  <= "000";
+			opcode  <= "000"; -- xor
 		 
 		wait for clk_period;
-       	dinA  <=  x"ffffffff";
-			dinB <=  x"aaaaaaaa";
-			opcode  <= "001";
+		   -- ADDI result dinA dinA : result = dinA + dinB
+       	dinA  <=  x"bbbbbbbb";
+			dinB <=  x"cccccccc";
+			opcode  <= "001"; -- addi
+		
 		wait for clk_period;
+		-- BNEQ dinA dinB i4 : if (dinA  != dinB ) flag = 
         	dinA  <=  x"ffffffff";
 			dinB <=  x"aaaaaaaa";
-			opcode  <= "101";
+			opcode  <= "101"; --bneq
+			
+			wait for clk_period;
+		-- BNEQ dinA dinB i4 : if (dinA  != dinB ) flag = 
+        	dinA  <=  x"ffffffff";
+			dinB <=  x"ffffffff";
+			opcode  <= "101"; --bneq
+			
 	 	wait for clk_period;
-        	dinA  <=  x"ffffffff";
+		 -- BLT dinA dinB i9 : if (dinA < dinA) flag = 
+        	dinA  <=  x"00000000";
 			dinB <=  x"aaaaaaaa";
-			opcode  <= "100";
+			opcode  <= "100"; --blt
+			
+			wait for clk_period;
+		 -- BLT dinA dinB i9 : if (dinA < dinA) flag = 
+        	dinA  <=  x"ffffffff";
+			dinB <=  x"00000000";
+			opcode  <= "100"; --blt
 		wait;
-   end process;
-
+   end process; 
 END;

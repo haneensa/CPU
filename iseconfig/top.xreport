@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-12-16T18:56:05</DateModified>
-  <ModuleName>RAM</ModuleName>
-  <SummaryTimeStamp>2014-12-16T18:52:43</SummaryTimeStamp>
+  <DateModified>2014-12-18T02:30:31</DateModified>
+  <ModuleName>memory</ModuleName>
+  <SummaryTimeStamp>2014-12-18T01:53:46</SummaryTimeStamp>
   <SavedFilePath>C:/Users/aisha/CPU1/iseconfig/top.xreport</SavedFilePath>
   <ImplementationReportsDirectory>C:/Users/aisha/CPU1\</ImplementationReportsDirectory>
-  <DateInitialized>2014-12-16T18:56:05</DateInitialized>
+  <DateInitialized>2014-12-18T02:30:30</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

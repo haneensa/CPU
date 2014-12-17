@@ -42,7 +42,7 @@ BEGIN
           clk => clk,
           en => en,
           addr => addr,
-          dout => dout
+          dout =>dout
         );
 
    -- Clock process definitions

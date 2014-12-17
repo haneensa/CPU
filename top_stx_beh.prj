@@ -1,0 +1,4 @@
+vhdl isim_temp "register_file.vhd"
+vhdl isim_temp "program_counter.vhd"
+vhdl isim_temp "instruction_memory.vhd"
+vhdl isim_temp "top.vhd"

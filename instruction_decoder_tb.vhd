@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 -- Engineer:
--- Create Date:   20:15:53 12/16/2014
+-- Create Date:   22:28:01 12/17/2014
 -- Module Name:   C:/Users/aisha/CPU1/instruction_decoder_tb.vhd
 -- Project Name:  CPU1
 -- Description:   
@@ -22,13 +22,10 @@ ARCHITECTURE behavior OF instruction_decoder_tb IS
          reset : IN  std_logic;
          en : IN  std_logic;
          dbus : IN  std_logic_vector(15 downto 0);
-         zor : OUT  std_logic;
-         addi : OUT  std_logic;
-         load : OUT  std_logic;
-         store : OUT  std_logic;
-         blt : OUT  std_logic;
-         bneq : OUT  std_logic;
-         eop : OUT  std_logic
+         opcode : OUT  std_logic_vector(2 downto 0);
+         op1 : OUT  std_logic_vector(2 downto 0);
+         op2 : OUT  std_logic_vector(2 downto 0);
+         op3 : OUT  std_logic_vector(6 downto 0)
         );
     END COMPONENT;
     
@@ -40,13 +37,10 @@ ARCHITECTURE behavior OF instruction_decoder_tb IS
    signal dbus : std_logic_vector(15 downto 0) := (others => '0');
 
  	--Outputs
-   signal zor : std_logic;
-   signal addi : std_logic;
-   signal load : std_logic;
-   signal store : std_logic;
-   signal blt : std_logic;
-   signal bneq : std_logic;
-   signal eop : std_logic;
+   signal opcode : std_logic_vector(2 downto 0);
+   signal op1 : std_logic_vector(2 downto 0);
+   signal op2 : std_logic_vector(2 downto 0);
+   signal op3 : std_logic_vector(6 downto 0);
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
@@ -59,13 +53,10 @@ BEGIN
           reset => reset,
           en => en,
           dbus => dbus,
-          zor => zor,
-          addi => addi,
-          load => load,
-          store => store,
-          blt => blt,
-          bneq => bneq,
-          eop => eop
+          opcode => opcode,
+          op1 => op1,
+          op2 => op2,
+          op3 => op3
         );
 
    -- Clock process definitions
@@ -81,7 +72,7 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-             -- hold reset state for 100 ns.
+            -- hold reset state for 100 ns.
       wait for 100 ns;	
 		    reset <= '0';
           en <= '1';

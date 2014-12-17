@@ -1,2 +1,3 @@
 vhdtdtfi -lib work register_file.vhd -prj CPU1 -o register_file.spl -module register_file -template C:/Xilinx/14.5/ISE_DS/ISE//data/splfile.tft -deleteonerror 
 spl2sym -intstyle ise -family aartix7 register_file.spl C:/Users/aisha/CPU1/register_file.sym 
+xst -intstyle ise -ifn "C:/Users/aisha/CPU1/register_file.xst" -ofn "C:/Users/aisha/CPU1/register_file.syr" 

@@ -1,2 +1,0 @@
-vhdl work "instruction_decoder.vhd"
-vhdl work "instruction_decoder_tb.vhd"

@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 -- Engineer:
--- Create Date:   00:59:39 12/16/2014
+-- Create Date:   01:11:49 12/18/2014
 -- Module Name:   C:/Users/aisha/CPU1/register_file_tb.vhd
 -- Project Name:  CPU1
 -- Description:   
@@ -19,17 +19,14 @@ END register_file_tb;
 ARCHITECTURE behavior OF register_file_tb IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
-  
+ 
     COMPONENT register_file
     PORT(
          clk : IN  std_logic;
          reset : IN  std_logic;
          en : IN  std_logic;
          r_w : IN  std_logic;
-         addrA : IN  std_logic_vector(2 downto 0);
-         addrB : IN  std_logic_vector(2 downto 0);
-         doutA : OUT  std_logic_vector(31 downto 0);
-         doutB : OUT  std_logic_vector(31 downto 0);
+         dout : OUT  std_logic_vector(31 downto 0);
          addr : IN  std_logic_vector(2 downto 0);
          din : IN  std_logic_vector(31 downto 0)
         );
@@ -41,14 +38,11 @@ ARCHITECTURE behavior OF register_file_tb IS
    signal reset : std_logic := '1';
    signal en : std_logic := '0';
    signal r_w : std_logic := '0';
-   signal addrA : std_logic_vector(2 downto 0) := (others => '0');
-   signal addrB : std_logic_vector(2 downto 0) := (others => '0');
    signal addr : std_logic_vector(2 downto 0) := (others => '0');
    signal din : std_logic_vector(31 downto 0) := (others => '0');
 
  	--Outputs
-   signal doutA : std_logic_vector(31 downto 0);
-   signal doutB : std_logic_vector(31 downto 0);
+   signal dout : std_logic_vector(31 downto 0);
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
@@ -61,10 +55,7 @@ BEGIN
           reset => reset,
           en => en,
           r_w => r_w,
-          addrA => addrA,
-          addrB => addrB,
-          doutA => doutA,
-          doutB => doutB,
+          dout => dout,
           addr => addr,
           din => din
         );
@@ -89,9 +80,7 @@ BEGIN
           r_w <= '1'; -- write enable
           addr <= "000";
           din <= x"AAAAFFFF";
-		 
 		wait for clk_period;
-          r_w <= '1'; -- write enable
           addr <= "001";
           din <= x"A111111F";
 		wait for clk_period;
@@ -102,18 +91,20 @@ BEGIN
           din <= x"AAA01FFF";
 		wait for clk_period;
           r_w <= '0'; -- read enable
-          addrB <= "010";
+          addr <= "010";
 
 		wait for clk_period;
-          addrA <= "011";
+          addr <= "011";
       wait for clk_period;
-          addrB <= "000";
+          addr <= "000";
 
 		wait for clk_period;
-          addrA <= "001";
-      
+          addr  <= "011";
+      	wait for clk_period;
+          addr  <= "001";
+			 	wait for clk_period;
+          addr  <= "001";
 		wait;
-
    end process;
- 
+
 END;

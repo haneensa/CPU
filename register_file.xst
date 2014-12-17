@@ -1,6 +1,9 @@
-set -tmpdir "C:/Users/aisha/CPU1/xst/projnav.tmp"
-set -xsthdpdir "C:/Users/aisha/CPU1/xst"
-run -compileonly yes
+set -tmpdir "xst/projnav.tmp"
+set -xsthdpdir "xst"
+run
+-ifn register_file.prj
+-ofn register_file
+-ofmt NGC
 -p xa7a100t-2I-csg324
 -top register_file
 -opt_mode Speed
@@ -48,4 +51,3 @@ run -compileonly yes
 -iob Auto
 -equivalent_register_removal YES
 -slice_utilization_ratio_maxmargin 5
--ifn register_file.prj

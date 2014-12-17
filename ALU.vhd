@@ -5,6 +5,14 @@
 -- Description: ALU has two inputs data and one output data 
 -- one flag test output to test data equality 
 -- it decide if we should jumb to a certain instruction or not
+
+-- XOR R5 R1 R2 : R5 = R1 xor R2
+-- ADDI R5 R1 0x50 : R5 = R1 + 0x50
+-- LOAD R3 (R1) : R3 = DataMem[R1]
+-- STORE R3 (R1) : DataMem[R1] = R3
+-- BNEQ R2 R5 i4 : if (R2 != R5) jump to instruction i4
+-- BLT R3 R4 i9 : if (R3 < R4) jump to insturtion i9
+-- EOP 
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -26,23 +34,30 @@ architecture Behavioral of ALU is
 
 begin
 -- case if opcode == somehting then do something
-   process (opcode)   is
+   process (opcode,dinA, dinB )   is
 	begin
-		case  opcode  is
+		case  opcode  is 
 			when "000" =>
 				result <= dinA xor dinB;
+					flag <= 'Z';
 			when "001" =>
 				result <= dinA + dinB;
+					flag <= 'Z';
 			when "100" => --blt
 			   if  (dinA > dinB) then -- is A > B?
 				flag <= '1';
 				end if;
+				result <= "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
+
 			when "101" => --bneq
 				if ((dinA - dinB) = 0) then   -- is A==B?   
 				flag <= '0';
-				end if;
+				end if; 
+				result <= "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
+
 			when others =>
-				null;
+				flag <= 'Z';
+				result <= "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
 		end case;
   end process;
   
