@@ -1,3 +1,0 @@
-vhdl work "program_counter.vhd"
-vhdl work "instruction_memory.vhd"
-vhdl work "top.vhd"

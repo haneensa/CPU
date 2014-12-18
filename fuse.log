@@ -1,20 +1,34 @@
-Running: C:\Xilinx\14.5\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/aisha/CPU1/memory_tb_isim_beh.exe -prj C:/Users/aisha/CPU1/memory_tb_beh.prj work.memory_tb 
+Running: C:\Xilinx\14.5\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/aisha/CPU1/top_tb_isim_beh.exe -prj C:/Users/aisha/CPU1/top_tb_beh.prj work.top_tb 
 ISim P.58f (signature 0x7708f090)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/aisha/CPU1/register_file.vhd" into library work
+Parsing VHDL file "C:/Users/aisha/CPU1/program_counter.vhd" into library work
 Parsing VHDL file "C:/Users/aisha/CPU1/memory.vhd" into library work
-Parsing VHDL file "C:/Users/aisha/CPU1/memory_tb.vhd" into library work
+Parsing VHDL file "C:/Users/aisha/CPU1/instruction_memory.vhd" into library work
+Parsing VHDL file "C:/Users/aisha/CPU1/instruction_decoder.vhd" into library work
+Parsing VHDL file "C:/Users/aisha/CPU1/ALU.vhd" into library work
+Parsing VHDL file "C:/Users/aisha/CPU1/top.vhd" into library work
+Parsing VHDL file "C:/Users/aisha/CPU1/top_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling architecture behavioral of entity program_counter [program_counter_default]
+Compiling architecture behavioral of entity instruction_memory [instruction_memory_default]
+Compiling architecture behavioral of entity instruction_decoder [instruction_decoder_default]
+Compiling architecture regarch of entity register_file [register_file_default]
 Compiling architecture behavioral of entity memory [memory_default]
-Compiling architecture behavior of entity memory_tb
+Compiling architecture behavioral of entity ALU [alu_default]
+Compiling architecture behavioral of entity top [top_default]
+Compiling architecture behavior of entity top_tb
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 6 VHDL Units
-Built simulation executable C:/Users/aisha/CPU1/memory_tb_isim_beh.exe
-Fuse Memory Usage: 32236 KB
-Fuse CPU Usage: 624 ms
+Waiting for 5 sub-compilation(s) to finish...
+Compiled 20 VHDL Units
+Built simulation executable C:/Users/aisha/CPU1/top_tb_isim_beh.exe
+Fuse Memory Usage: 35688 KB
+Fuse CPU Usage: 874 ms

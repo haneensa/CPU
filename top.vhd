@@ -16,6 +16,53 @@ port (
 end top;
 
 architecture Behavioral of top is
+
+ COMPONENT program_counter
+    PORT(
+         clk : IN  std_logic;
+         reset : IN  std_logic;
+         crl : IN  std_logic; --from control
+         en : IN  std_logic; --from control
+         newAddr : IN  std_logic_vector(3 downto 0); -- from instruction
+         addr : OUT  std_logic_vector(3 downto 0) --defualt
+        );
+    END COMPONENT;
+	 
+	COMPONENT instruction_memory
+    PORT(
+         clk : IN  std_logic;
+         en : IN  std_logic; --from control
+         addr : IN  std_logic_vector(3 downto 0); -- from PC
+         dout : OUT  std_logic_vector(15 downto 0) -- to instruction decoder
+        );
+    END COMPONENT;
+	 
+	COMPONENT instruction_decoder
+    PORT(
+         clk : IN  std_logic;
+         reset : IN  std_logic;
+         en : IN  std_logic;
+         dbus : IN  std_logic_vector(15 downto 0);
+         opcode : OUT  std_logic_vector(2 downto 0);
+         op1 : OUT  std_logic_vector(2 downto 0);
+         op2 : OUT  std_logic_vector(2 downto 0);
+         op3 : OUT  std_logic_vector(6 downto 0)
+        );
+    END COMPONENT;
+	 
+	 COMPONENT ALU
+    PORT(
+         clk : IN  std_logic;
+         reset : IN  std_logic;
+         dinA : IN  std_logic_vector(31 downto 0);
+         dinB : IN  std_logic_vector(31 downto 0);
+         opcode : IN  std_logic_vector(2 downto 0);
+         result : OUT  std_logic_vector(31 downto 0);
+         flag: OUT  std_logic  --to control		
+        );
+    END COMPONENT;
+	 
+	 
     COMPONENT memory
     PORT(
          clk : IN  std_logic;
@@ -41,82 +88,38 @@ architecture Behavioral of top is
     END COMPONENT;
     
  
-	 COMPONENT program_counter
-    PORT(
-         clk : IN  std_logic;
-         reset : IN  std_logic;
-         crl : IN  std_logic; --from control
-         en : IN  std_logic; --from control
-         newAddr : IN  std_logic_vector(3 downto 0); -- from instruction
-         addr : OUT  std_logic_vector(3 downto 0) --defualt
-        );
-    END COMPONENT;
-	 
-	COMPONENT instruction_memory
-    PORT(
-         clk : IN  std_logic;
-         en : IN  std_logic; --from control
-         addr : IN  std_logic_vector(3 downto 0); -- from PC
-         dout : OUT  std_logic_vector(15 downto 0) -- to instruction decoder
-        );
-    END COMPONENT;
-	 
-	 COMPONENT instruction_decoder
-    PORT(
-         clk : IN  std_logic;
-         reset : IN  std_logic;
-         en : IN  std_logic; --from control
-         din : IN  std_logic_vector(15 downto 0);
-         opcode : OUT  std_logic_vector(2 downto 0); -- to alu and control
-         op1 : OUT  std_logic_vector(2 downto 0); -- to alu or reg
-         op2 : OUT  std_logic_vector(2 downto 0); -- to alu or reg
-         op3 : OUT  std_logic_vector(6 downto 0) -- to alu or reg
-        );
-    END COMPONENT;
-	 
-	 COMPONENT ALU
-    PORT(
-         clk : IN  std_logic;
-         reset : IN  std_logic;
-         dinA : IN  std_logic_vector(31 downto 0);
-         dinB : IN  std_logic_vector(31 downto 0);
-         opcode : IN  std_logic_vector(2 downto 0);
-         result : OUT  std_logic_vector(31 downto 0);
-         flag: OUT  std_logic  --to control
-			
-        );
-    END COMPONENT;
+-- signals 
 
 signal abus :std_logic_vector(7 downto 0);
 signal dbus :std_logic_vector(31 downto 0);
  	 
 -- signals for PC	 
 signal addr_pc, din_pc :std_logic_vector(3 downto 0);
-signal crl_pc, en_pc :std_logic:='1';
+signal en_pc :std_logic:='1';
+signal crl_pc :std_logic:='0';
 
--- signals for Instruction Memory	 
+ -- signals for Instruction Memory	 
 signal dout_irm :std_logic_vector(15 downto 0);
 signal en_irm :std_logic:='1'; 
--- signals for mem	 
-signal addra :std_logic_vector(7 downto 0);
-signal dina, douta :std_logic_vector(31 downto 0);
-signal wea :std_logic_vector(0 downto 0);
+ -- signals for Instruction decoder	 
+ signal en_id :std_logic:='1'; 
+ signal opcode_ird, op1_ird, op2_ird  :std_logic_vector(2 downto 0);
+signal op3_ird :std_logic_vector(6 downto 0);
+  -- signals for alu 
+ signal result_alu  :std_logic_vector(31 downto 0);
+signal flag_alu  :std_logic;
+  
+ -- signals for mem	 
+signal addr_mem :std_logic_vector(4 downto 0);
+signal din_mem, dout_mem :std_logic_vector(31 downto 0);
+signal r_w_mem, en_mem :std_logic:='0'; 
+ 
 -- signals for Reg file	 
 signal addr_reg :std_logic_vector(2 downto 0);
 signal din_reg, dout_reg :std_logic_vector(31 downto 0);
 signal en_reg, r_w :std_logic:='1'; 
 
 begin 
-
- registers: register_file PORT MAP (
-          clk => clk,
-          reset => reset,
-          en => en_reg,
-          r_w => r_w,
-          dout => dout_reg ,
-          addr => addr_reg,
-          din => din_reg
-        );
 	pc: program_counter port map(
 		 clk => clk,
 	    reset =>   reset,
@@ -132,12 +135,46 @@ begin
 	    addr  => addr_pc, -- from PC
 	    dout => dout_irm -- to IR
 	);
-	--ctl: RAM port map(clk, wea, addra, dina, douta);
+	ird: instruction_decoder PORT MAP (
+          clk => clk,
+          reset => reset,
+          en => en_id,-- from control unit
+          dbus => dout_irm,-- from IRM
+          opcode => opcode_ird,-- to control unit and alu
+          op1 => op1_ird,
+          op2 => op2_ird,
+          op3 => op3_ird
+   );
+	
+			 
+	registers: register_file PORT MAP (
+          clk => clk,
+          reset => reset,
+          en => en_reg,-- from control unit
+          r_w => r_w,-- from control unit
+          dout => dout_reg ,
+          addr => addr_reg,
+          din => din_reg
+        );
+	ram: memory PORT MAP (
+          clk => clk,
+          r_w => r_w_mem,-- from control unit
+          en => en_mem,-- from control unit
+          reset => reset,
+          addr => addr_mem,
+          din => din_mem,
+			 dout => dout_mem
+        );
+		   alu2: ALU PORT MAP (
+          clk => clk,
+          reset => reset,
+          dinA => dout_reg,
+          dinB => dout_reg,
+          opcode => opcode_ird,
+          result => result_alu,
+          flag => flag_alu -- to control
+			 );
+ 	--ctl: control_unit port map(clk, wea, addra, dina, douta);
 
- 
-	--ram: RAM port map(clk, wea, addra, dina, douta);
-	--file_rg: register_file port map(clk, reset, en_reg, r_w, addr_reg, din_reg, dout_reg);
-
- 
 end Behavioral;
 
