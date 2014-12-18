@@ -58,7 +58,7 @@ architecture Behavioral of top is
          dinB : IN  std_logic_vector(31 downto 0);
          opcode : IN  std_logic_vector(2 downto 0);
          result : OUT  std_logic_vector(31 downto 0);
-         flag: OUT  std_logic  --to control		
+         bneq, blt: OUT  std_logic  --to control		
         );
     END COMPONENT;
 	 
@@ -107,8 +107,10 @@ signal en_irm :std_logic:='1';
 signal op3_ird :std_logic_vector(6 downto 0);
   -- signals for alu 
  signal result_alu  :std_logic_vector(31 downto 0);
-signal flag_alu  :std_logic;
-  
+signal bneq_alu, blt_alu  :std_logic;
+signal dinA_init  :std_logic_vector(31 downto 0):=x"bbbbbbbb";
+signal dinB_init :std_logic_vector(31 downto 0):=x"cccccccc";
+ 
  -- signals for mem	 
 signal addr_mem :std_logic_vector(4 downto 0);
 signal din_mem, dout_mem :std_logic_vector(31 downto 0);
@@ -146,6 +148,17 @@ begin
           op3 => op3_ird
    );
 	
+  alu2: ALU PORT MAP (
+          clk => clk,
+          reset => reset,
+          dinA => dinA_init,
+          dinB => dinB_init,
+          opcode => opcode_ird,
+          result => result_alu,
+          bneq => bneq_alu, -- to control
+			 blt=> blt_alu -- to control
+
+			 );
 			 
 	registers: register_file PORT MAP (
           clk => clk,
@@ -165,15 +178,7 @@ begin
           din => din_mem,
 			 dout => dout_mem
         );
-		   alu2: ALU PORT MAP (
-          clk => clk,
-          reset => reset,
-          dinA => dout_reg,
-          dinB => dout_reg,
-          opcode => opcode_ird,
-          result => result_alu,
-          flag => flag_alu -- to control
-			 );
+		 
  	--ctl: control_unit port map(clk, wea, addra, dina, douta);
 
 end Behavioral;

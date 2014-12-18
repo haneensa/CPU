@@ -25,7 +25,7 @@ port (
 	dinA, dinB : IN STD_LOGIC_VECTOR(31 DOWNTO 0); -- operand 1 and 2
 	opcode: IN STD_LOGIC_VECTOR(2 DOWNTO 0); -- to decide the operation
 	result: OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	flag: OUT STD_LOGIC
+	bneq, blt: OUT STD_LOGIC
 ); 
 end ALU;
 
@@ -39,24 +39,28 @@ begin
 		case  opcode  is 
 			when "000" =>
 				result <= dinA xor dinB;
-					flag <= 'Z';
+					bneq <= 'Z';
+					blt <= 'Z';
+
 			when "001" =>
 				result <= dinA + dinB;
-					flag <= 'Z';
+					bneq <= 'Z';
+					blt <= 'Z';
 			when "100" => --blt
 			   if  (dinA > dinB) then -- is A > B?
-				flag <= '1';
+				 blt <= '1';
 				end if;
 				result <= "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
-
+				 blt <= '0';
 			when "101" => --bneq
 				if ((dinA - dinB) = 0) then   -- is A==B?   
-				flag <= '0';
+				bneq <= '1';
 				end if; 
 				result <= "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
-
+				bneq <= '0';
 			when others =>
-				flag <= 'Z';
+				bneq <= 'Z';
+					blt <= 'Z';
 				result <= "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
 		end case;
   end process;
