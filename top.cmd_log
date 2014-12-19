@@ -34,3 +34,4 @@ netgen -intstyle ise -rpw 100 -tpw 0 -ar Structure -tm top -w -dir netgen/transl
 xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/top.syr" 
 xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/top.syr" 
 xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/top.syr" 
+xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/top.syr" 

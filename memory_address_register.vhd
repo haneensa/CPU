@@ -11,17 +11,28 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity memory_address_register is
 port(
-	 clk,  en: IN STD_LOGIC;
+	 clk, reset, en, r_w: IN STD_LOGIC;
 	 din : IN STD_LOGIC_VECTOR(4 DOWNTO 0); --from 
     dout : OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
 	 );
 end memory_address_register;
 
 architecture Behavioral of memory_address_register is
+signal reg_file: std_logic_vector(4 downto 0);
 
 begin
-	dout <= din
-	when  en = '1'  else -- when read enabled
+	
+process(clk, reset) begin 
+		if reset = '1' then
+				reg_file <= "00000"; -- initialize
+		elsif clk'event and clk = '0'  and r_w = '1' and en='1' then  -- write enabled
+			reg_file  <= din;
+		end if;
+	end process;
+	
+	dout <= reg_file
+	when reset = '0' and en = '1' and r_w = '0' else -- read enabled
 	"ZZZZZ";
+	 
 end Behavioral;
 

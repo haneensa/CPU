@@ -12,7 +12,7 @@ use IEEE.std_logic_unsigned.all;
 entity mux is
 port (
 	inputA : in std_logic_vector (31 downto 0);
-	inputB : in std_logic_vector (6 downto 0);
+	inputB : in std_logic_vector (31 downto 0);
 	sel : in std_logic;
 	output : out std_logic_vector (31 downto 0)
 );
@@ -25,7 +25,7 @@ begin
    	if sel='1' then
 		output <= inputA;
 	else
-		output <= "0000000000000000000000000" & inputB;
+		output <=  inputB;
 	end if;
   end process;
 

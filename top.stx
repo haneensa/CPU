@@ -42,15 +42,15 @@ TABLE OF CONTENTS
 Parsing VHDL file "C:\Users\aisha\CPU1\register_file.vhd" into library work
 Parsing entity <register_file>.
 Parsing architecture <regArch> of entity <register_file>.
+Parsing VHDL file "C:\Users\aisha\CPU1\reg32bits.vhd" into library work
+Parsing entity <reg32bits>.
+Parsing architecture <Behavioral> of entity <reg32bits>.
 Parsing VHDL file "C:\Users\aisha\CPU1\program_counter.vhd" into library work
 Parsing entity <program_counter>.
 Parsing architecture <Behavioral> of entity <program_counter>.
 Parsing VHDL file "C:\Users\aisha\CPU1\mux.vhd" into library work
 Parsing entity <mux>.
 Parsing architecture <Behavioral> of entity <mux>.
-Parsing VHDL file "C:\Users\aisha\CPU1\memory_data_register.vhd" into library work
-Parsing entity <memory_data_register>.
-Parsing architecture <Behavioral> of entity <memory_data_register>.
 Parsing VHDL file "C:\Users\aisha\CPU1\memory_address_register.vhd" into library work
 Parsing entity <memory_address_register>.
 Parsing architecture <Behavioral> of entity <memory_address_register>.
@@ -72,16 +72,18 @@ Parsing architecture <Behavioral> of entity <alu>.
 Parsing VHDL file "C:\Users\aisha\CPU1\top.vhd" into library work
 Parsing entity <top>.
 Parsing architecture <Behavioral> of entity <top>.
+WARNING:HDLCompiler:946 - "C:\Users\aisha\CPU1\top.vhd" Line 249: Actual for formal port inputb is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:\Users\aisha\CPU1\top.vhd" Line 308: Actual for formal port din is neither a static name nor a globally static expression
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 7.39 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.65 secs
  
 --> 
 
-Total memory usage is 202456 kilobytes
+Total memory usage is 206456 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

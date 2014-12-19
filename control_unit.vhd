@@ -30,8 +30,13 @@ port(
 	 opcode: IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
 	  
 	 -- alu2: ALU 
-	 dinB_mux: OUT STD_LOGIC;  
-	 
+	 alu_mux : OUT  std_logic;
+	 r_w_z : OUT  std_logic;
+	 en_z : OUT  std_logic;
+	 	 r_w_y : OUT  std_logic;
+	 en_y : OUT  std_logic;
+
+	 reg_mux: OUT  std_logic;
 	-- this will affect program counter 	 
 	-- if set then ctl_pr = 1 and state == jump
 
@@ -40,10 +45,11 @@ port(
 	  
 	 --  to MAR
 	 en_mar: OUT STD_LOGIC; -- enable when load/store
-	 
+	 r_w_mar : OUT  std_logic;
+
 	 -- to MDR
 	 en_mdr: OUT STD_LOGIC; -- enable when store
-	 
+	 r_w_mdr : OUT  std_logic;
 	 -- to MEMORY
 	  r_w_mem: OUT STD_LOGIC; -- set when write | clear when read
 	  en_mem : OUT STD_LOGIC; -- enable when read | write
@@ -114,35 +120,43 @@ begin
         else '0';
   en_pc <= '1'    when state =  fetch
   		   else '0';
-			
+  alu_mux <= '0'    when opcode = "001"
+  		   else '1';	 
+  reg_mux <= '1'    when state =  load1 and  opcode = "010" 
+  		   else '0';
+		
   en_irm <= '1'    when state =  fetch
   		   else '0';
   en_id <= '1'    when state =  decode
   		   else '0';
--- XOR R5 R1 R2 : R5 = R1 xor R2
--- ADDI R5 R1 0x50 : R5 = R1 + 0x50
--- LOAD R3 (R1) : R3 = DataMem[R1]
--- STORE R3 (R1) : DataMem[R1] = R3
--- BNEQ R2 R5 i4 : if (R2 != R5) jump to instruction i4
--- BLT R3 R4 i9 : if (R3 < R4) jump to insturtion i9
-
-  en_reg <= '1'    when state =  load0 or state = store0 or state = alu0
-						 or state =  load1 or state = store1 or state = alu1
+  en_reg <= '1'    when state =  decode or state =  load0 or state = store0 or state = alu0  or state = alu1
+						 or state =  load1 or state = store1  or state = jump0  or state = jump1
   		   else '0';
-  r_w_reg <= '1'    when state =  load1 or state = alu1
+  r_w_reg <= '1'    when state =  load1 or state = alu1  or state = jump0
   		   else '0';		
-			
-  en_mar <= '1'   when state =   load0 or state =   load1 or
+  r_w_z <= '1'    when state = alu0 
+  		   else '0';	
+	en_z <= '1'    when state = alu0 or state = alu1  
+  		   else '0';	
+	r_w_y <= '1'    when state = decode 
+  		   else '0';	
+	en_y <= '1'    when state = decode or state = alu0 or state = alu1  or state = jump0  or state = jump1
+  		   else '0';	
+  en_mar <= '1'   when state =   load0 or state =   load1 or state = decode or
   			state = store0 or state = store1
   		   else '0';
-  en_mdr <= '1'   when state =   load0 or state =   load1
+  r_w_mar <= '1'    when state = decode
   		   else '0';
- 			
-	 -- to MEMORY
+  en_mdr <= '1'   when state =   load0 or state =   load1 or
+  			state = store0 or state = store1
+  		   else '0';
+  r_w_mdr <= '1'    when state =   store0
+  		   else '0';
   en_mem  <= '1'   when state =   load1 or  state = store1
   		   else '0';
   r_w_mem <= '1'   when  state = store1
   		   else '0';
+			
 end Behavioral;
 	
 	  
