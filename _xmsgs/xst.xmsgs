@@ -11,70 +11,70 @@
 <msg type="warning" file="HDLCompiler" num="92" delta="old" >"C:\Users\aisha\CPU1\memory.vhd" Line 33: <arg fmt="%s" index="1">r_w</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\Users\aisha\CPU1\top.vhd" Line 136: Net &lt;<arg fmt="%s" index="1">din_pc[3]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Users\aisha\CPU1\top.vhd" Line 136: Net &lt;<arg fmt="%s" index="1">din_pc[3]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\Users\aisha\CPU1\top.vhd" Line 151: Net &lt;<arg fmt="%s" index="1">dinB_init[31]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Users\aisha\CPU1\top.vhd" Line 151: Net &lt;<arg fmt="%s" index="1">dinB_init[31]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\Users\aisha\CPU1\top.vhd" Line 161: Net &lt;<arg fmt="%s" index="1">din_mar[4]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Users\aisha\CPU1\top.vhd" Line 161: Net &lt;<arg fmt="%s" index="1">din_mar[4]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"C:\Users\aisha\CPU1\top.vhd" Line 173: Net &lt;<arg fmt="%s" index="1">addr_reg[2]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Users\aisha\CPU1\top.vhd" Line 173: Net &lt;<arg fmt="%s" index="1">addr_reg[2]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">180</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">pc</arg>&gt; of block &lt;<arg fmt="%s" index="4">program_counter</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">180</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ctl</arg>&gt; of block &lt;<arg fmt="%s" index="4">control_unit</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">188</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">irm</arg>&gt; of block &lt;<arg fmt="%s" index="4">instruction_memory</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">198</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">pc</arg>&gt; of block &lt;<arg fmt="%s" index="4">program_counter</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">194</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ird</arg>&gt; of block &lt;<arg fmt="%s" index="4">instruction_decoder</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">206</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">irm</arg>&gt; of block &lt;<arg fmt="%s" index="4">instruction_memory</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">206</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">alu2</arg>&gt; of block &lt;<arg fmt="%s" index="4">ALU</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">212</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ird</arg>&gt; of block &lt;<arg fmt="%s" index="4">instruction_decoder</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">216</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">registers</arg>&gt; of block &lt;<arg fmt="%s" index="4">register_file</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">224</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">alu2</arg>&gt; of block &lt;<arg fmt="%s" index="4">ALU</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">230</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ram</arg>&gt; of block &lt;<arg fmt="%s" index="4">memory</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">235</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">registers</arg>&gt; of block &lt;<arg fmt="%s" index="4">register_file</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">240</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">mar</arg>&gt; of block &lt;<arg fmt="%s" index="4">memory_address_register</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">249</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ram</arg>&gt; of block &lt;<arg fmt="%s" index="4">memory</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">248</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">mdr</arg>&gt; of block &lt;<arg fmt="%s" index="4">memory_data_register</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">259</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">mar</arg>&gt; of block &lt;<arg fmt="%s" index="4">memory_address_register</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">255</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ctl</arg>&gt; of block &lt;<arg fmt="%s" index="4">control_unit</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%d" index="2">267</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">mdr</arg>&gt; of block &lt;<arg fmt="%s" index="4">memory_data_register</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">top</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%s" index="2">194</arg>: Output port &lt;<arg fmt="%s" index="3">op1</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ird</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%s" index="2">180</arg>: Output port &lt;<arg fmt="%s" index="3">dinB_mux</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ctl</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%s" index="2">194</arg>: Output port &lt;<arg fmt="%s" index="3">op2</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ird</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%s" index="2">212</arg>: Output port &lt;<arg fmt="%s" index="3">op1</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ird</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%s" index="2">194</arg>: Output port &lt;<arg fmt="%s" index="3">op3</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ird</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%s" index="2">212</arg>: Output port &lt;<arg fmt="%s" index="3">op2</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ird</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%s" index="2">230</arg>: Output port &lt;<arg fmt="%s" index="3">dout</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ram</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%s" index="2">212</arg>: Output port &lt;<arg fmt="%s" index="3">op3</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ird</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%s" index="2">255</arg>: Output port &lt;<arg fmt="%s" index="3">dinB_mux</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ctl</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\aisha\CPU1\top.vhd</arg>&quot; line <arg fmt="%s" index="2">249</arg>: Output port &lt;<arg fmt="%s" index="3">dout</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ram</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">din_pc</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">din_pc</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
 </msg>
 
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">dinB_init</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">dinB_init</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
 </msg>
 
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">din_mar</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">din_mar</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
 </msg>
 
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">addr_reg</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">addr_reg</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
 </msg>
 
 <msg type="warning" file="Xst" num="0" delta="new" >The specified part-type was not generated at build time. XST is loading the full part-type and will therefore consume more CPU and memory.

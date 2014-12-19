@@ -105,7 +105,6 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="instruction_memory_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="instruction_memory_xst.xrpt"/>
     <file xil_pn:fileType="FILE_SPL" xil_pn:name="instruction_register.spl"/>
-    <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd">
       <branch xil_pn:name="BehavioralSim"/>
@@ -214,7 +213,7 @@
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="top_ngdbuild.xrpt"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="top_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="top_summary.html"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="top_tb_beh.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="top_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="top_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="top_tb_isim_beh.wdb"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="top_tb_stx_beh.prj"/>
@@ -233,15 +232,30 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1418994768" xil_pn:in_ck="-1384785781823108553" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1418994768">
+    <transform xil_pn:end_ts="1418995398" xil_pn:in_ck="7525057222156571370" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1418995398">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="ALU.vhd"/>
+      <outfile xil_pn:name="alu_tb.vhd"/>
+      <outfile xil_pn:name="control_unit.vhd"/>
+      <outfile xil_pn:name="controller_tb.vhd"/>
+      <outfile xil_pn:name="instruction_decoder.vhd"/>
+      <outfile xil_pn:name="instruction_decoder_tb.vhd"/>
+      <outfile xil_pn:name="instruction_memory.vhd"/>
+      <outfile xil_pn:name="instruction_memory_tb.vhd"/>
+      <outfile xil_pn:name="mar_tb.vhd"/>
+      <outfile xil_pn:name="mdr_tb.vhd"/>
+      <outfile xil_pn:name="memory.vhd"/>
+      <outfile xil_pn:name="memory_address_register.vhd"/>
+      <outfile xil_pn:name="memory_data_register.vhd"/>
+      <outfile xil_pn:name="memory_tb.vhd"/>
+      <outfile xil_pn:name="program_counter.vhd"/>
+      <outfile xil_pn:name="program_counter_tb.vhd"/>
+      <outfile xil_pn:name="ram_tb.vhd"/>
+      <outfile xil_pn:name="register_file.vhd"/>
+      <outfile xil_pn:name="register_file_tb.vhd"/>
+      <outfile xil_pn:name="top.vhd"/>
+      <outfile xil_pn:name="top_tb.vhd"/>
     </transform>
     <transform xil_pn:end_ts="1418993793" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-4275747388733000162" xil_pn:start_ts="1418993793">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -251,44 +265,51 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1418935850" xil_pn:in_ck="-7960637644241596540" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-2736807667720700861" xil_pn:start_ts="1418935850">
+    <transform xil_pn:end_ts="1418995398" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-2736807667720700861" xil_pn:start_ts="1418995398">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="ipcore_dir/main_memory.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1418994768" xil_pn:in_ck="-1384785781823108553" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1418994768">
+    <transform xil_pn:end_ts="1418995398" xil_pn:in_ck="7525057222156571370" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1418995398">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="ALU.vhd"/>
+      <outfile xil_pn:name="alu_tb.vhd"/>
+      <outfile xil_pn:name="control_unit.vhd"/>
+      <outfile xil_pn:name="controller_tb.vhd"/>
+      <outfile xil_pn:name="instruction_decoder.vhd"/>
+      <outfile xil_pn:name="instruction_decoder_tb.vhd"/>
+      <outfile xil_pn:name="instruction_memory.vhd"/>
+      <outfile xil_pn:name="instruction_memory_tb.vhd"/>
+      <outfile xil_pn:name="mar_tb.vhd"/>
+      <outfile xil_pn:name="mdr_tb.vhd"/>
+      <outfile xil_pn:name="memory.vhd"/>
+      <outfile xil_pn:name="memory_address_register.vhd"/>
+      <outfile xil_pn:name="memory_data_register.vhd"/>
+      <outfile xil_pn:name="memory_tb.vhd"/>
+      <outfile xil_pn:name="program_counter.vhd"/>
+      <outfile xil_pn:name="program_counter_tb.vhd"/>
+      <outfile xil_pn:name="ram_tb.vhd"/>
+      <outfile xil_pn:name="register_file.vhd"/>
+      <outfile xil_pn:name="register_file_tb.vhd"/>
+      <outfile xil_pn:name="top.vhd"/>
+      <outfile xil_pn:name="top_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1418994774" xil_pn:in_ck="5649498926902734931" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-7239507186364266387" xil_pn:start_ts="1418994768">
+    <transform xil_pn:end_ts="1418995404" xil_pn:in_ck="7525057222156571370" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-7239507186364266387" xil_pn:start_ts="1418995398">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="top_tb_beh.prj"/>
+      <outfile xil_pn:name="top_tb_isim_beh.exe"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1418994989" xil_pn:in_ck="6590505727511663014" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-2261449621713147221" xil_pn:start_ts="1418994989">
+    <transform xil_pn:end_ts="1418995564" xil_pn:in_ck="6590505727511663014" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-2261449621713147221" xil_pn:start_ts="1418995564">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="top_tb_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1418149374" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1418149374">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -318,15 +339,32 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1418993760" xil_pn:in_ck="590468807301719963" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="3178572602560009815" xil_pn:start_ts="1418993719">
+    <transform xil_pn:end_ts="1418995531" xil_pn:in_ck="-3719851093916586638" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="3178572602560009815" xil_pn:start_ts="1418995490">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="ALU.ngr"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="instruction_decoder.ngr"/>
+      <outfile xil_pn:name="instruction_memory.ngr"/>
+      <outfile xil_pn:name="memory.ngr"/>
+      <outfile xil_pn:name="memory_address_register.ngr"/>
+      <outfile xil_pn:name="memory_data_register.ngr"/>
+      <outfile xil_pn:name="program_counter.ngr"/>
+      <outfile xil_pn:name="register_file.ngr"/>
+      <outfile xil_pn:name="top.lso"/>
+      <outfile xil_pn:name="top.ngc"/>
+      <outfile xil_pn:name="top.ngr"/>
+      <outfile xil_pn:name="top.prj"/>
+      <outfile xil_pn:name="top.stx"/>
+      <outfile xil_pn:name="top.syr"/>
+      <outfile xil_pn:name="top.xst"/>
+      <outfile xil_pn:name="top_stx_beh.prj"/>
+      <outfile xil_pn:name="top_tb_beh.prj"/>
+      <outfile xil_pn:name="top_tb_stx_beh.prj"/>
+      <outfile xil_pn:name="top_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
     </transform>
     <transform xil_pn:end_ts="1418992847" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="6693835875156060939" xil_pn:start_ts="1418992847">
       <status xil_pn:value="SuccessfullyRun"/>

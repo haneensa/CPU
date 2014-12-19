@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: top.prj
 
@@ -99,9 +99,6 @@ DSP48 Utilization Ratio            : 100
 Auto BRAM Packing                  : NO
 Slice Utilization Ratio Delta      : 5
 
----- Other Options
-Cores Search Directories           : {"ipcore_dir"  }
-
 =========================================================================
 
 
@@ -111,9 +108,6 @@ Cores Search Directories           : {"ipcore_dir"  }
 Parsing VHDL file "C:\Users\aisha\CPU1\register_file.vhd" into library work
 Parsing entity <register_file>.
 Parsing architecture <regArch> of entity <register_file>.
-Parsing VHDL file "C:\Users\aisha\CPU1\ipcore_dir\main_memory.vhd" into library work
-Parsing entity <main_memory>.
-Parsing architecture <main_memory_a> of entity <main_memory>.
 Parsing VHDL file "C:\Users\aisha\CPU1\program_counter.vhd" into library work
 Parsing entity <program_counter>.
 Parsing architecture <Behavioral> of entity <program_counter>.
@@ -148,6 +142,8 @@ Parsing architecture <Behavioral> of entity <top>.
 
 Elaborating entity <top> (architecture <Behavioral>) from library <work>.
 
+Elaborating entity <control_unit> (architecture <Behavioral>) from library <work>.
+
 Elaborating entity <program_counter> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <instruction_memory> (architecture <Behavioral>) from library <work>.
@@ -165,21 +161,19 @@ WARNING:HDLCompiler:92 - "C:\Users\aisha\CPU1\memory.vhd" Line 33: r_w should be
 Elaborating entity <memory_address_register> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <memory_data_register> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <control_unit> (architecture <Behavioral>) from library <work>.
 WARNING:HDLCompiler:634 - "C:\Users\aisha\CPU1\top.vhd" Line 136: Net <din_pc[3]> does not have a driver.
 WARNING:HDLCompiler:634 - "C:\Users\aisha\CPU1\top.vhd" Line 151: Net <dinB_init[31]> does not have a driver.
 WARNING:HDLCompiler:634 - "C:\Users\aisha\CPU1\top.vhd" Line 161: Net <din_mar[4]> does not have a driver.
 WARNING:HDLCompiler:634 - "C:\Users\aisha\CPU1\top.vhd" Line 173: Net <addr_reg[2]> does not have a driver.
-WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 180. All outputs of instance <pc> of block <program_counter> are unconnected in block <top>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 188. All outputs of instance <irm> of block <instruction_memory> are unconnected in block <top>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 194. All outputs of instance <ird> of block <instruction_decoder> are unconnected in block <top>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 206. All outputs of instance <alu2> of block <ALU> are unconnected in block <top>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 216. All outputs of instance <registers> of block <register_file> are unconnected in block <top>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 230. All outputs of instance <ram> of block <memory> are unconnected in block <top>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 240. All outputs of instance <mar> of block <memory_address_register> are unconnected in block <top>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 248. All outputs of instance <mdr> of block <memory_data_register> are unconnected in block <top>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 255. All outputs of instance <ctl> of block <control_unit> are unconnected in block <top>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 180. All outputs of instance <ctl> of block <control_unit> are unconnected in block <top>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 198. All outputs of instance <pc> of block <program_counter> are unconnected in block <top>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 206. All outputs of instance <irm> of block <instruction_memory> are unconnected in block <top>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 212. All outputs of instance <ird> of block <instruction_decoder> are unconnected in block <top>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 224. All outputs of instance <alu2> of block <ALU> are unconnected in block <top>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 235. All outputs of instance <registers> of block <register_file> are unconnected in block <top>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 249. All outputs of instance <ram> of block <memory> are unconnected in block <top>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 259. All outputs of instance <mar> of block <memory_address_register> are unconnected in block <top>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 267. All outputs of instance <mdr> of block <memory_data_register> are unconnected in block <top>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -187,11 +181,11 @@ WARNING:Xst:2972 - "C:\Users\aisha\CPU1\top.vhd" line 255. All outputs of instan
 
 Synthesizing Unit <top>.
     Related source file is "C:\Users\aisha\CPU1\top.vhd".
-INFO:Xst:3210 - "C:\Users\aisha\CPU1\top.vhd" line 194: Output port <op1> of the instance <ird> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\aisha\CPU1\top.vhd" line 194: Output port <op2> of the instance <ird> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\aisha\CPU1\top.vhd" line 194: Output port <op3> of the instance <ird> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\aisha\CPU1\top.vhd" line 230: Output port <dout> of the instance <ram> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\aisha\CPU1\top.vhd" line 255: Output port <dinB_mux> of the instance <ctl> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\aisha\CPU1\top.vhd" line 180: Output port <dinB_mux> of the instance <ctl> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\aisha\CPU1\top.vhd" line 212: Output port <op1> of the instance <ird> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\aisha\CPU1\top.vhd" line 212: Output port <op2> of the instance <ird> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\aisha\CPU1\top.vhd" line 212: Output port <op3> of the instance <ird> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\aisha\CPU1\top.vhd" line 249: Output port <dout> of the instance <ram> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <din_pc> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <dinB_init> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <din_mar> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -324,12 +318,12 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 37.00 secs
-Total CPU time to Xst completion: 37.25 secs
+Total REAL time to Xst completion: 39.00 secs
+Total CPU time to Xst completion: 38.48 secs
  
 --> 
 
-Total memory usage is 755348 kilobytes
+Total memory usage is 755476 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   20 (   0 filtered)

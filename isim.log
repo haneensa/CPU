@@ -16,8 +16,3 @@ Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 at 105 ns(3), Instance /top_tb/uut/irm/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 at 105 ns(3), Instance /top_tb/uut/irm/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-# restart
-# run 1.00us
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-at 105 ns(3), Instance /top_tb/uut/irm/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
