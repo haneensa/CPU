@@ -25,3 +25,11 @@ xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/t
 xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/top.syr" 
 xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/top.syr" 
 xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/top.syr" 
+xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/top.syr" 
+xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/top.syr" 
+xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/top.syr" 
+xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xa7a100t-csg324-2I top.ngc top.ngd  
+netgen -intstyle ise -rpw 100 -tpw 0 -ar Structure -tm top -w -dir netgen/translate -ofmt vhdl -sim top.ngd top_translate.vhd 
+xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/top.syr" 
+xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/top.syr" 

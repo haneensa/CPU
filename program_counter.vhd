@@ -32,7 +32,7 @@ begin
 				pcReg <= "0000";
 			elsif crl = '1' then -- ctr value from uController from instruction
 				pcReg <= newAddr;
-			elsif crl = '0' then 
+			elsif crl = '0' and  en = '1'then 
 				pcReg <= pcReg + "0001";
 			end if;
 		end if;

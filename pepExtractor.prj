@@ -1,7 +1,1 @@
-work	"ALU.vhd"
-work	"instruction_decoder.vhd"
-work	"instruction_memory.vhd"
-work	"memory.vhd"
-work	"program_counter.vhd"
-work	"register_file.vhd"
-work	"top.vhd"
+work	"control_unit.vhd"

@@ -1,0 +1,19 @@
+Release 14.5 - netgen P.58f (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: netgen -intstyle ise -rpw 100 -tpw 0 -ar Structure -tm top -w
+-dir netgen/translate -ofmt vhdl -sim top.ngd top_translate.vhd  
+
+Reading design 'top.ngd' ...
+Flattening design ...
+Processing design ... 
+  Preping design's networks ...
+  Preping design's macros ...
+Writing VHDL netlist 'C:\Users\aisha\CPU1\netgen\translate\top_translate.vhd'
+...
+INFO:NetListWriters:635 - The generated VHDL netlist contains Xilinx SIMPRIM
+   simulation primitives and has to be used with SIMPRIM library for correct
+   compilation and simulation. 
+Number of warnings: 0
+Number of info messages: 1
+Total memory usage is 131812 kilobytes

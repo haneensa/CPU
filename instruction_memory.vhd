@@ -60,7 +60,7 @@ begin
 
 	dout <= reg_file(conv_integer(Unsigned(addr)))
 	when  en = '1'  else -- when read enabled
-	"ZZZZZZZZZZZZZZZZ";
+	"UUUUUUUUUUUUUUUU";
 
 end Behavioral;
 

@@ -20,6 +20,6 @@ architecture Behavioral of memory_data_register is
 begin
 	dout <= din
 	when  en = '1'  else -- when read enabled
-	"ZZZZZZZZZZZZZZZZ";
+	"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
 end Behavioral;
 
