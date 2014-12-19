@@ -1,21 +1,7 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
 -- Create Date:    23:37:40 12/12/2014 
--- Design Name: 
 -- Module Name:    instruction_memory - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
 -- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
 ----------------------------------------------------------------------------------
 
 library IEEE;
@@ -59,8 +45,7 @@ begin
 
 
 	dout <= reg_file(conv_integer(Unsigned(addr)))
-	when  en = '1'  else -- when read enabled
-	"UUUUUUUUUUUUUUUU";
+	when  en = '1';
 
 end Behavioral;
 

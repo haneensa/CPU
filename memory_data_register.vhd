@@ -1,5 +1,4 @@
 ----------------------------------------------------------------------------------
--- Engineer: 
 -- Create Date:    13:39:20 12/13/2014 
 -- Module Name:    memory_data_register - Behavioral 
 -- Description: 

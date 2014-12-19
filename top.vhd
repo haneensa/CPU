@@ -17,7 +17,15 @@ end top;
 
 architecture Behavioral of top is
 
-
+ COMPONENT mux
+    PORT(
+         inputA : IN  std_logic_vector(31 downto 0);
+         inputB : IN  std_logic_vector(6 downto 0);
+         sel : IN  std_logic;
+         output : OUT  std_logic_vector(31 downto 0)
+        );
+    END COMPONENT;
+	 
  COMPONENT program_counter
     PORT(
          clk : IN  std_logic;
@@ -129,11 +137,11 @@ architecture Behavioral of top is
     
 -- signals 
 
-signal abus :std_logic_vector(7 downto 0);
+signal abus :std_logic_vector(4 downto 0);
 signal dbus :std_logic_vector(31 downto 0);
  	 
 -- signals for PC	 
-signal addr_pc, din_pc :std_logic_vector(3 downto 0);
+signal addr_pc :std_logic_vector(3 downto 0);
 signal en_pc :std_logic;
 signal crl_pc :std_logic;
 
@@ -145,14 +153,10 @@ signal en_irm :std_logic;
  signal opcode_ird, op1_ird, op2_ird  :std_logic_vector(2 downto 0);
 signal op3_ird :std_logic_vector(6 downto 0);
   -- signals for alu 
- signal result_alu  :std_logic_vector(31 downto 0);
 signal bneq_alu, blt_alu  :std_logic;
-signal dinA_init  :std_logic_vector(31 downto 0);
-signal dinB_init :std_logic_vector(31 downto 0);
  
  -- signals for mem	 
-signal addr_mem :std_logic_vector(4 downto 0);
-signal din_mem, dout_mem :std_logic_vector(31 downto 0);
+signal dout_mem :std_logic_vector(31 downto 0);
 signal r_w_mem, en_mem :std_logic:='0'; 
  
 -- MAR
@@ -174,9 +178,15 @@ signal addr_reg :std_logic_vector(2 downto 0);
 signal din_reg, dout_reg :std_logic_vector(31 downto 0);
 signal en_reg, r_w_reg :std_logic; 
 
-signal dinB_mux :std_logic; 
+signal sel_mux :std_logic; 
 
-begin 
+--Inputs
+   signal inputA : std_logic_vector(31 downto 0);
+   signal inputB : std_logic_vector(6 downto 0);
+
+ 	--Outputs
+   signal output_mux : std_logic_vector(31 downto 0);
+   begin 
  ctl: control_unit PORT MAP (
           clk => clk,
           reset => reset,
@@ -185,7 +195,7 @@ begin
           en_irm => en_irm, -- to instruction mem
           en_id => en_id, -- to instruction mem
           opcode => opcode_ird, -- from decoder
-          dinB_mux => dinB_mux, -- to mux
+          dinB_mux => sel_mux, -- to mux
           bneq_alu => bneq_alu, -- from alu
           blt_alu => blt_alu, -- from alu
           en_mar => en_mar,-- to mar
@@ -200,7 +210,7 @@ begin
 	    reset =>   reset,
 	    crl=>   crl_pc, -- from control unit
 	    en  =>   en_pc,  -- from control unit
-	    newAddr =>   din_pc, -- if the instruction specified an address to jumb to
+	    newAddr =>   op3_ird(3 downto 0), -- if the instruction specified an address to jumb to
 	    addr =>   addr_pc   -- out to intruction reg
 	);
 	irm: instruction_memory port map(
@@ -208,6 +218,7 @@ begin
 	    en  => en_irm,  -- from control unit
 	    addr  => addr_pc, -- from PC
 	    dout => dout_irm -- to IR
+		 
 	);
 	ird: instruction_decoder PORT MAP (
           clk => clk,
@@ -219,19 +230,33 @@ begin
           op2 => op2_ird,
           op3 => op3_ird
    );
+	
+	 mux_alu: mux PORT MAP (
+          inputA => dout_reg,
+          inputB => op3_ird,
+          sel => sel_mux,
+          output => output_mux_alu
+        );
+
+
 -- XOR R5 R1 R2 : R5 = R1 xor R2
 -- ADDI R5 R1 0x50 : R5 = R1 + 0x50
   alu2: ALU PORT MAP (
           clk => clk,
           reset => reset,
           dinA => dout_reg, -- always from Register |(dinA_init)
-          dinB => dinB_init, -- either Register or Immediate value -> need mux before (dout_mux)
+          dinB => output_mux, -- either Register or Immediate value -> need mux before (dout_mux)
           opcode => opcode_ird, -- should it be only from Ucontroller?
           result => din_reg, -- always to a register | (result_alu)
           bneq => bneq_alu, -- to control
 			 blt=> blt_alu -- to control
 			 );
-			 
+	 mux_reg: mux PORT MAP (
+          inputA => dout_mem,
+          inputB => op3_ird,
+          sel => sel_mux,
+          output => output_mux_reg
+        );		 
 	registers: register_file PORT MAP (
           clk => clk,
           reset => reset,
@@ -239,7 +264,7 @@ begin
           r_w => r_w_reg,-- from control unit
           dout => dout_reg , -- to memory or alu
           addr => addr_reg, -- from the instruction
-          din => din_reg  -- either from mem or result of ALU
+          din => output_mux_reg  -- either from mem or result of ALU
         );
 		  --reslut alu
 		  -- XOR R5 R1 R2 : R5 = R1 xor R2

@@ -1,0 +1,87 @@
+Release 14.5 - xst P.58f (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Users/aisha/CPU1/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to C:/Users/aisha/CPU1/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\aisha\CPU1\register_file.vhd" into library work
+Parsing entity <register_file>.
+Parsing architecture <regArch> of entity <register_file>.
+Parsing VHDL file "C:\Users\aisha\CPU1\program_counter.vhd" into library work
+Parsing entity <program_counter>.
+Parsing architecture <Behavioral> of entity <program_counter>.
+Parsing VHDL file "C:\Users\aisha\CPU1\mux.vhd" into library work
+Parsing entity <mux>.
+Parsing architecture <Behavioral> of entity <mux>.
+Parsing VHDL file "C:\Users\aisha\CPU1\memory_data_register.vhd" into library work
+Parsing entity <memory_data_register>.
+Parsing architecture <Behavioral> of entity <memory_data_register>.
+Parsing VHDL file "C:\Users\aisha\CPU1\memory_address_register.vhd" into library work
+Parsing entity <memory_address_register>.
+Parsing architecture <Behavioral> of entity <memory_address_register>.
+Parsing VHDL file "C:\Users\aisha\CPU1\memory.vhd" into library work
+Parsing entity <memory>.
+Parsing architecture <Behavioral> of entity <memory>.
+Parsing VHDL file "C:\Users\aisha\CPU1\instruction_memory.vhd" into library work
+Parsing entity <instruction_memory>.
+Parsing architecture <Behavioral> of entity <instruction_memory>.
+Parsing VHDL file "C:\Users\aisha\CPU1\instruction_decoder.vhd" into library work
+Parsing entity <instruction_decoder>.
+Parsing architecture <Behavioral> of entity <instruction_decoder>.
+Parsing VHDL file "C:\Users\aisha\CPU1\control_unit.vhd" into library work
+Parsing entity <control_unit>.
+Parsing architecture <Behavioral> of entity <control_unit>.
+Parsing VHDL file "C:\Users\aisha\CPU1\ALU.vhd" into library work
+Parsing entity <ALU>.
+Parsing architecture <Behavioral> of entity <alu>.
+Parsing VHDL file "C:\Users\aisha\CPU1\top.vhd" into library work
+Parsing entity <top>.
+Parsing architecture <Behavioral> of entity <top>.
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.39 secs
+ 
+--> 
+
+Total memory usage is 202456 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

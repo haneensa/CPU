@@ -1,8 +1,8 @@
 ----------------------------------------------------------------------------------
--- Engineer: 
 -- Create Date:    13:34:01 12/13/2014 
 -- Module Name:    ALU - Behavioral 
--- Description: ALU has two inputs data and one output data 
+-- Description: 
+-- ALU has two inputs data and one output data 
 -- one flag test output to test data equality 
 -- it decide if we should jumb to a certain instruction or not
 

@@ -5,6 +5,7 @@ Turning on mult-threading, number of parallel sub-compilation jobs: 8
 Determining compilation order of HDL files
 Parsing VHDL file "C:/Users/aisha/CPU1/register_file.vhd" into library work
 Parsing VHDL file "C:/Users/aisha/CPU1/program_counter.vhd" into library work
+Parsing VHDL file "C:/Users/aisha/CPU1/mux.vhd" into library work
 Parsing VHDL file "C:/Users/aisha/CPU1/memory_data_register.vhd" into library work
 Parsing VHDL file "C:/Users/aisha/CPU1/memory_address_register.vhd" into library work
 Parsing VHDL file "C:/Users/aisha/CPU1/memory.vhd" into library work
@@ -25,6 +26,7 @@ Compiling architecture behavioral of entity control_unit [control_unit_default]
 Compiling architecture behavioral of entity program_counter [program_counter_default]
 Compiling architecture behavioral of entity instruction_memory [instruction_memory_default]
 Compiling architecture behavioral of entity instruction_decoder [instruction_decoder_default]
+Compiling architecture behavioral of entity mux [mux_default]
 Compiling architecture behavioral of entity ALU [alu_default]
 Compiling architecture regarch of entity register_file [register_file_default]
 Compiling architecture behavioral of entity memory [memory_default]
@@ -34,7 +36,7 @@ Compiling architecture behavioral of entity top [top_default]
 Compiling architecture behavior of entity top_tb
 Time Resolution for simulation is 1ps.
 Waiting for 8 sub-compilation(s) to finish...
-Compiled 26 VHDL Units
+Compiled 28 VHDL Units
 Built simulation executable C:/Users/aisha/CPU1/top_tb_isim_beh.exe
-Fuse Memory Usage: 35860 KB
-Fuse CPU Usage: 827 ms
+Fuse Memory Usage: 35912 KB
+Fuse CPU Usage: 906 ms

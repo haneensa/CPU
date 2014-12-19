@@ -16,10 +16,6 @@ port (
 	newAddr: in STD_LOGIC_VECTOR(3 downto 0);
 	addr: out STD_LOGIC_VECTOR(3 downto 0)
 );
-
-	 
-	
-	
 end program_counter;
 
 architecture Behavioral of program_counter is
@@ -27,7 +23,7 @@ architecture Behavioral of program_counter is
 signal pcReg: STD_LOGIC_VECTOR(3 downto 0);
 begin
 	process(clk) begin
-		if clk'event and clk = '0' then
+		if clk'event and clk = '1' then
 			if reset = '1' then 
 				pcReg <= "0000";
 			elsif crl = '1' then -- ctr value from uController from instruction

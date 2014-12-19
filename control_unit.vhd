@@ -1,9 +1,7 @@
 ----------------------------------------------------------------------------------
--- Engineer: 
 -- Create Date:    13:34:43 12/13/2014 
 -- Module Name:    control_unit - Behavioral 
 -- Description: 
-
 -- XOR R5 R1 R2 : R5 = R1 xor R2
 -- ADDI R5 R1 0x50 : R5 = R1 + 0x50
 -- LOAD R3 (R1) : R3 = DataMem[R1]

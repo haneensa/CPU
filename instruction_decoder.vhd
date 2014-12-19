@@ -1,9 +1,8 @@
 ----------------------------------------------------------------------------------
--- Engineer: 
 -- Create Date:    18:36:24 12/15/2014 
 -- Module Name:    instruction_decoder - Behavioral 
--- Project Name: 
--- Description: take the instruction from the IR and decode the instruction then sends the 
+-- Description: 
+-- take the instruction from the IR and decode the instruction then sends the 
 -- relevent data to ALU or control unit or Registers
 -- EXAMPLE: 
 -- XOR R5 R1 R2 : R5 = R1 xor R2
@@ -27,7 +26,6 @@ port(
 	 op1, op2: out  STD_LOGIC_VECTOR(2 DOWNTO 0); -- to alu
 	 op3: out  STD_LOGIC_VECTOR(6 DOWNTO 0) -- to alu when xor and addi 
 	 -- to memory when load or store 
-
 	 );
 end instruction_decoder;
 

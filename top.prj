@@ -1,5 +1,6 @@
 vhdl work "register_file.vhd"
 vhdl work "program_counter.vhd"
+vhdl work "mux.vhd"
 vhdl work "memory_data_register.vhd"
 vhdl work "memory_address_register.vhd"
 vhdl work "memory.vhd"
