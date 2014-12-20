@@ -1,10 +1,4 @@
---------------------------------------------------------------------------------
--- Engineer:
--- Create Date:   03:06:13 12/18/2014
--- Module Name:   C:/Users/aisha/CPU1/top_tb.vhd
--- Project Name:  CPU1
--- Description:   
---------------------------------------------------------------------------------
+-- Top Test Bench
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
  
@@ -44,15 +38,12 @@ BEGIN
 		clk <= '1';
 		wait for clk_period/2;
    end process;
- 
-
    -- Stimulus process
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
-
-	reset <= '0';
+		reset <= '0';
  		wait for clk_period;
  		wait for clk_period;
  		wait for clk_period;
@@ -61,7 +52,6 @@ BEGIN
  		wait for clk_period;
  		wait for clk_period;
  		wait for clk_period;
-
       wait;
    end process;
 
