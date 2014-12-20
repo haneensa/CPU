@@ -35,3 +35,4 @@ xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/t
 xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/top.syr" 
 xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/top.syr" 
 xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/top.syr" 
+xst -intstyle ise -ifn "C:/Users/aisha/CPU1/top.xst" -ofn "C:/Users/aisha/CPU1/top.syr" 

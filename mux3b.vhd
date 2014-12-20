@@ -1,5 +1,4 @@
 ----------------------------------------------------------------------------------
--- Engineer: 
 -- Create Date:    17:30:18 12/19/2014 
 -- Module Name:    mux3b - Behavioral 
 -- Description: Binary Mux, 3 bits wide

@@ -60,7 +60,7 @@ architecture Behavioral of top is
     PORT(
          clk : IN  std_logic;
          reset : IN  std_logic;
-         en : IN  std_logic;
+         en : IN  std_logic; --from control
          dbus : IN  std_logic_vector(15 downto 0);
          opcode : OUT  std_logic_vector(2 downto 0);
          op1 : OUT  std_logic_vector(2 downto 0);
@@ -98,7 +98,7 @@ architecture Behavioral of top is
     PORT(
          clk : IN  std_logic;
 			reset : IN  std_logic;
-         en : IN  std_logic;
+         en : IN  std_logic; --from control
 			r_w : IN  std_logic; --from control        
 			din : IN  std_logic_vector(4 downto 0);
          dout : OUT  std_logic_vector(4 downto 0)
@@ -109,7 +109,7 @@ architecture Behavioral of top is
     PORT(
          clk : IN  std_logic;
 			reset : IN  std_logic;
-         en : IN  std_logic;
+         en : IN  std_logic;  --from control
 			r_w : IN  std_logic; --from control
          din : IN  std_logic_vector(31 downto 0);
          dout : OUT  std_logic_vector(31 downto 0)
@@ -132,12 +132,12 @@ architecture Behavioral of top is
     PORT(
          clk : IN  std_logic;
          reset : IN  std_logic;
-         crl_pc : OUT  std_logic;
-         en_pc : OUT  std_logic;
-         en_irm : OUT  std_logic;
-         en_id : OUT  std_logic;
-         opcode : IN  std_logic_vector(2 downto 0);
-         alu_mux : OUT  std_logic;
+         crl_pc : OUT  std_logic; -- to PC
+         en_pc : OUT  std_logic;  -- to PC
+         en_irm : OUT  std_logic; -- to Instruction Memory
+         en_id : OUT  std_logic; -- to Instruction Decoder
+         opcode : IN  std_logic_vector(2 downto 0); -- from ALU
+         alu_mux : OUT  std_logic; -- t
 			r_w_z : OUT  std_logic;
 			en_z : OUT  std_logic;
 			r_w_y : OUT  std_logic;
@@ -180,10 +180,12 @@ signal r_w_mem, en_mem :std_logic:='0';
 -- MAR
 signal en_mar : std_logic;
 signal dout_mar : std_logic_vector(4 downto 0);
+signal r_w_mar :std_logic; 
 
 -- MDR
 signal en_mdr : std_logic;
 signal dout_mdr : std_logic_vector(31 downto 0);
+signal r_w_mdr :std_logic; 
 
 -- signals for Reg file	 
  signal  dout_reg :std_logic_vector(31 downto 0);
@@ -197,16 +199,16 @@ signal output_mux_reg : std_logic_vector(31 downto 0);
 signal alu_out : std_logic_vector(31 downto 0);
 signal result : std_logic_vector(31 downto 0);
 
+-- z register
 signal r_w_z :std_logic; 
 signal en_z :std_logic; 
 signal dout_z : std_logic_vector(31 downto 0);
 
+-- y register
 signal r_w_y :std_logic; 
 signal en_y :std_logic; 
 signal dout_y : std_logic_vector(31 downto 0);
 
-signal r_w_mdr :std_logic; 
-signal r_w_mar :std_logic; 
 
 signal sel_mux_addr1  :std_logic; 
 signal sel_mux_addr  :std_logic; 
@@ -225,9 +227,9 @@ begin
           opcode => opcode_ird, -- from decoder
           alu_mux => sel_mux_alu, -- to mux
 			 r_w_z => r_w_z,
-			 en_z => en_z, -- to pc
+			 en_z => en_z, 
 			 r_w_y => r_w_y,
-			 en_y => en_y, -- to pc
+			 en_y => en_y,  
 			 reg_mux => sel_mux_reg,
           bneq_alu => bneq_alu, -- from alu
           blt_alu => blt_alu, -- from alu
@@ -281,10 +283,7 @@ begin
           sel => sel_mux_alu,
           output => output_mux_alu
         );
--- XOR R5 R1 R2 : R5 = R1 xor R2
--- ADDI R5 R1 0x50 : R5 = R1 + 0x50
--- BNEQ R2 R5 i4 : if (R2 != R5) jump to instruction i4
--- BLT R3 R4 i9 : if (R3 < R4) jump to insturtion i944
+ 
   alu2: ALU PORT MAP (
           clk => clk,
           reset => reset,
