@@ -1,5 +1,8 @@
--- Register file module
--- 8 X 32 bits
+----------------------------------------------------------------------------------
+-- Create Date:    17:30:18 12/19/2014 
+-- Module Name:    Register file module - Behavioral 
+-- Description:   8 X 32 bits
+----------------------------------------------------------------------------------
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

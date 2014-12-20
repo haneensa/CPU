@@ -1,9 +1,8 @@
 ----------------------------------------------------------------------------------
--- Engineer: 
+-- Engineer: Haneen Mohammed
 -- Create Date:    11:07:31 12/13/2014 
 -- Module Name:    top - Behavioral 
--- Project Name: 
--- Description: 
+-- Project Name: 32 bits unpiplined CPU
 ----------------------------------------------------------------------------------
 
 library IEEE;
