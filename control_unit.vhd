@@ -141,7 +141,7 @@ begin
   en_mar <= '1'   when state =   load0 or state = load1 or state = decode 
 						or state = store0 or state = store1
   		   else '0';
-  r_w_mar <= '1'    when state = store0 -- op 2
+  r_w_mar <= '1'    when state = store0 or state =   load0-- op 2
   		   else '0';
   en_mdr <= '1'   when state =   load0 or state =   load1 
 						or state = store0 or state = store1
