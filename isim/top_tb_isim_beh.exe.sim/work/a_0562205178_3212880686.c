@@ -121,7 +121,7 @@ LAB10:    t2 = (t0 + 1512U);
 LAB13:    t2 = (t0 + 1032U);
     t5 = *((char **)t2);
     t13 = *((unsigned char *)t5);
-    t14 = (t13 == (unsigned char)2);
+    t14 = (t13 == (unsigned char)3);
     t11 = t14;
     goto LAB15;
 

@@ -22,7 +22,7 @@ begin
 process(clk, reset) begin 
 		if reset = '1' then
 				reg_file <= "00000000000000000000000000000000"; -- initialize
-		elsif clk'event and clk = '0'  and r_w = '1' and en='1' then  -- write enabled
+		elsif clk'event and clk = '1'  and r_w = '1' and en='1' then  -- write enabled
 			reg_file  <= din;
 		end if;
 	end process;

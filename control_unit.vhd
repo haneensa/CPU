@@ -124,16 +124,16 @@ begin
   		   else '0';
   alu_mux <= '0'    when opcode = "001"
   		   else '1';	 
-			
   reg_mux <=  '1'    when state =  load1 and  opcode = "010"  
   		   else  '0';
-		
   en_irm <= '1'    when state =  fetch
   		   else '0';
   en_id <= '1'    when state =  decode
   		   else '0';
-  en_reg <= '1'    when state =  decode or state =  load0 or state = store0 or state = alu0  or state = alu1
-						 or state =  load1 or state = store1  or state = jump0  or state = jump1
+  en_reg <= '1'    when state =  decode or state =  load0 or state =  load1
+						 or state = store0 or state = store1 
+						 or state = alu0  or state = alu1
+						 or state = jump0  or state = jump1
   		   else '0';
   r_w_reg <= '1'    when state =  load1 or state = alu1  
   		   else '0';		
@@ -141,17 +141,18 @@ begin
   		   else '0';	
 	en_z <= '1'    when state = alu0 or state = alu1  
   		   else '0';	
-	r_w_y <= '1'    when state = decode 
+	r_w_y <= '1'    when state = decode  
   		   else '0';	
-	en_y <= '1'    when state = decode or state = alu0 or state = alu1  or state = jump0  or state = jump1
+	en_y <= '1'    when state = decode or state = alu0 
+						or state = alu1  or state = jump0  or state = jump1
   		   else '0';	
-  en_mar <= '1'   when state =   load0 or state =   load1 or state = decode or
-  			state = store0 or state = store1
+  en_mar <= '1'   when state =   load0 or state = load1 or state = decode 
+						or state = store0 or state = store1
   		   else '0';
-  r_w_mar <= '1'    when state = decode
+  r_w_mar <= '1'    when state = store0 -- op 2
   		   else '0';
-  en_mdr <= '1'   when state =   load0 or state =   load1 or
-  			state = store0 or state = store1
+  en_mdr <= '1'   when state =   load0 or state =   load1 
+						or state = store0 or state = store1
   		   else '0';
   r_w_mdr <= '1'    when state =   store0
   		   else '0';
@@ -159,15 +160,11 @@ begin
   		   else '0';
   r_w_mem <= '1'   when  state = store1
   		   else '0';
-	sel_mux_addr1  <= '0' when state = decode -- chose op 2 
-		else '1'; -- chose op 1
+  sel_mux_addr1  <= '0' when state = decode -- chose op 2 
+			else '1'; -- chose op 1
 		
-	sel_mux_addr  <=  '0' when  state = alu0 -- chose op3 
-	else '1'; -- chose op1 or 2
-	
+  sel_mux_addr  <=  '0' when  state = alu0 -- chose op3 
+			else '1'; -- chose op1 or 2
 	
 end Behavioral;
-	
-	  
-	  
 	 
