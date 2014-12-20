@@ -6,7 +6,7 @@ Determining compilation order of HDL files
 Parsing VHDL file "C:/Users/aisha/CPU1/register_file.vhd" into library work
 Parsing VHDL file "C:/Users/aisha/CPU1/reg32bits.vhd" into library work
 Parsing VHDL file "C:/Users/aisha/CPU1/program_counter.vhd" into library work
-Parsing VHDL file "C:/Users/aisha/CPU1/mux3to1.vhd" into library work
+Parsing VHDL file "C:/Users/aisha/CPU1/mux3b.vhd" into library work
 Parsing VHDL file "C:/Users/aisha/CPU1/mux.vhd" into library work
 Parsing VHDL file "C:/Users/aisha/CPU1/memory_address_register.vhd" into library work
 Parsing VHDL file "C:/Users/aisha/CPU1/memory.vhd" into library work
@@ -15,8 +15,8 @@ Parsing VHDL file "C:/Users/aisha/CPU1/instruction_decoder.vhd" into library wor
 Parsing VHDL file "C:/Users/aisha/CPU1/control_unit.vhd" into library work
 Parsing VHDL file "C:/Users/aisha/CPU1/ALU.vhd" into library work
 Parsing VHDL file "C:/Users/aisha/CPU1/top.vhd" into library work
-WARNING:HDLCompiler:946 - "C:/Users/aisha/CPU1/top.vhd" Line 271: Actual for formal port inputb is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "C:/Users/aisha/CPU1/top.vhd" Line 336: Actual for formal port din is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/aisha/CPU1/top.vhd" Line 280: Actual for formal port inputb is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:/Users/aisha/CPU1/top.vhd" Line 356: Actual for formal port din is neither a static name nor a globally static expression
 Parsing VHDL file "C:/Users/aisha/CPU1/top_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
@@ -32,7 +32,7 @@ Compiling architecture behavioral of entity instruction_decoder [instruction_dec
 Compiling architecture behavioral of entity reg32bits [reg32bits_default]
 Compiling architecture behavioral of entity mux [mux_default]
 Compiling architecture behavioral of entity ALU [alu_default]
-Compiling architecture behavioral of entity mux3to1 [mux3to1_default]
+Compiling architecture behavioral of entity mux3b [mux3b_default]
 Compiling architecture regarch of entity register_file [register_file_default]
 Compiling architecture behavioral of entity memory [memory_default]
 Compiling architecture behavioral of entity memory_address_register [memory_address_register_default]
@@ -42,5 +42,5 @@ Time Resolution for simulation is 1ps.
 Waiting for 10 sub-compilation(s) to finish...
 Compiled 30 VHDL Units
 Built simulation executable C:/Users/aisha/CPU1/top_tb_isim_beh.exe
-Fuse Memory Usage: 36100 KB
-Fuse CPU Usage: 874 ms
+Fuse Memory Usage: 36004 KB
+Fuse CPU Usage: 905 ms

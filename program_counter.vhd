@@ -1,12 +1,11 @@
 ----------------------------------------------------------------------------------
--- Engineer: 
 -- Create Date:    12:59:15 12/13/2014 
 -- Module Name:    program_counter - Behavioral 
 -- Description: 
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.std_logic_unsigned.all;
+use IEEE.STD_LOGIC_UNSIGNED.all;
 
 entity program_counter is
 port (
@@ -26,7 +25,7 @@ begin
 		if clk'event and clk = '1' then
 			if reset = '1' then 
 				pcReg <= "0000";
-			elsif crl = '1' then -- ctr value from uController from instruction
+			elsif crl = '1' then -- ctl value from uController 
 				pcReg <= newAddr;
 			elsif crl = '0' and  en = '1'then 
 				pcReg <= pcReg + "0001";
@@ -35,4 +34,3 @@ begin
 	end process;
 	addr <= pcReg when en = '1' else "ZZZZ";
 end Behavioral;
-

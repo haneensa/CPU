@@ -1,2 +1,1 @@
 vhdl work "ALU.vhd"
-vhdl work "ipcore_dir/main_memory.vhd"

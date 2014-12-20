@@ -7,7 +7,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 -- for <conv_integer>
-use IEEE.std_logic_arith.all; 
+use IEEE.STD_LOGIC_ARITH.all; 
 
 entity instruction_memory is
 port (
@@ -17,15 +17,12 @@ port (
 );
 end instruction_memory;
  
-	
-
 architecture Behavioral of instruction_memory is
 
-	type reg_array is array (0 to 15) of std_logic_vector(15 downto 0);
+	type reg_array is array (0 to 15) of STD_LOGIC_VECTOR(15 downto 0);
 	signal reg_file : reg_array;
 	
-begin
-	
+begin	
 	reg_file(0) <= x"0481"; -- initialize
 	reg_file(1) <= x"34D0"; -- initialize
 	reg_file(2) <= x"38CC"; -- initialize
@@ -43,11 +40,6 @@ begin
 	reg_file(14) <= x"0000"; -- initialize
 	reg_file(15) <= x"0000"; -- initialize
 
-
 	dout <= reg_file(conv_integer(Unsigned(addr)))
 	when  en = '1';
-
 end Behavioral;
-
-
-

@@ -2,7 +2,7 @@
 ----------------------------------------------------------------------------------
 -- Create Date:    13:39:20 12/13/2014 
 -- Module Name:    reg32bits - Behavioral 
--- Description: 
+-- Description: Register of 32 bits wide
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -19,7 +19,6 @@ architecture Behavioral of reg32bits is
 signal reg_file: std_logic_vector(31 downto 0);
 	
 begin	
-
 process(clk, reset) begin 
 		if reset = '1' then
 				reg_file <= "00000000000000000000000000000000"; -- initialize
@@ -30,7 +29,5 @@ process(clk, reset) begin
 	
 	dout <= reg_file
 	when reset = '0' and en = '1' and r_w = '0' else -- read enabled
-	"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
-	 
+	"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"; 
 end Behavioral;
-

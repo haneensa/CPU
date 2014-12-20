@@ -36,7 +36,7 @@ port(
 	 	 r_w_y : OUT  std_logic;
 	 en_y : OUT  std_logic;
 
-	 reg_mux: OUT  std_logic_vector (1 downto 0);
+	 reg_mux: OUT  std_logic;
 	-- this will affect program counter 	 
 	-- if set then ctl_pr = 1 and state == jump
 
@@ -56,7 +56,9 @@ port(
 
 	 -- to register files
 	 en_reg: OUT STD_LOGIC; 
-	 r_w_reg : OUT STD_LOGIC
+	 r_w_reg : OUT STD_LOGIC;
+	 	sel_mux_addr1  : OUT std_logic; 
+         sel_mux_addr  : OUT  std_logic
  );
  
 end control_unit;
@@ -99,32 +101,32 @@ begin
 			
 				when alu0 => 	state <= alu1;
 				when alu1 => 	state <= fetch;
-				
-			
+ 			
 				when halt => 	state <= halt;
 			
 				when jump0 =>
-					if blt_alu =  '1' or bneq_alu =  '1' then state <= jump1;
+					if blt_alu =  '1' or bneq_alu =  '1' then 
+						state <= jump1;
 					else 
-					state <= fetch;
-					end if;
+						state <= fetch;
+					end if;	
 				
+				when jump1 => 	state <= fetch;					
 				when others => 	state <= halt;
 				end case;
 			end if;
 		end if;
   end process;
   
-   
-  crl_pc   <= '1'	   when state = jump0
-        else '0';
+  crl_pc   <= '1'	when state = jump1 
+	else '0';
   en_pc <= '1'    when state =  fetch
   		   else '0';
   alu_mux <= '0'    when opcode = "001"
   		   else '1';	 
-  reg_mux <= "00"    when state =  load1 and  opcode = "010"; 
-  reg_mux <= "01"    when state = alu0  or state = alu1
-  		   else "10";
+			
+  reg_mux <=  '1'    when state =  load1 and  opcode = "010"  
+  		   else  '0';
 		
   en_irm <= '1'    when state =  fetch
   		   else '0';
@@ -157,7 +159,13 @@ begin
   		   else '0';
   r_w_mem <= '1'   when  state = store1
   		   else '0';
-			
+	sel_mux_addr1  <= '0' when state = decode -- chose op 2 
+		else '1'; -- chose op 1
+		
+	sel_mux_addr  <=  '0' when  state = alu0 -- chose op3 
+	else '1'; -- chose op1 or 2
+	
+	
 end Behavioral;
 	
 	  

@@ -28,7 +28,7 @@ ARCHITECTURE behavior OF alu_tb IS
          dinB : IN  std_logic_vector(31 downto 0);
          opcode : IN  std_logic_vector(2 downto 0);
          result : OUT  std_logic_vector(31 downto 0);
-         flag: OUT  std_logic
+	bneq, blt: OUT STD_LOGIC
 			
         );
     END COMPONENT;
@@ -43,7 +43,7 @@ ARCHITECTURE behavior OF alu_tb IS
 
  	--Outputs
    signal result : std_logic_vector(31 downto 0);
-   signal flag: std_logic;
+	signal bneq, blt:  STD_LOGIC;
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
@@ -58,8 +58,8 @@ BEGIN
           dinB => dinB,
           opcode => opcode,
           result => result,
-           flag => flag
-
+          bneq =>  bneq,
+			 blt =>  blt
 			 );
 
    -- Clock process definitions

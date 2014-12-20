@@ -9,7 +9,6 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
  
-
 entity memory is
 port (
 		clk, r_w, en, reset: in STD_LOGIC;
@@ -18,9 +17,7 @@ port (
 		dout: out STD_LOGIC_VECTOR(31 downto 0)
 );
 end memory;
--- 
 architecture Behavioral of memory is
-
 type ram_typ is array(0 to 31) of STD_LOGIC_VECTOR(31 downto 0);
 signal ram: ram_typ;
 begin
@@ -36,7 +33,4 @@ begin
   dout <= ram(conv_integer(unsigned(addr)))
   		when reset = '0' and en = '1' and r_w = '0' else
 	  "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
-
 end Behavioral;
-
-  

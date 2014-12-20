@@ -26,16 +26,16 @@ architecture Behavioral of top is
          output : OUT  std_logic_vector(31 downto 0)
         );
     END COMPONENT;
-	 COMPONENT mux3to1
+	
+ COMPONENT mux3b
     PORT(
-         inputA : IN  std_logic_vector(31 downto 0);
-         inputB : IN  std_logic_vector(31 downto 0);
-			inputC : IN  std_logic_vector(31 downto 0);
-			sel : IN  std_logic_vector (1 downto 0);
-         output : OUT  std_logic_vector(31 downto 0)
+         inputA : IN  std_logic_vector(2 downto 0);
+         inputB : IN  std_logic_vector(2 downto 0);
+         sel : IN  std_logic;
+         output : OUT  std_logic_vector(2 downto 0)
         );
     END COMPONENT;
-	 
+		
  COMPONENT program_counter
     PORT(
          clk : IN  std_logic;
@@ -142,7 +142,7 @@ architecture Behavioral of top is
 			en_z : OUT  std_logic;
 			r_w_y : OUT  std_logic;
 			en_y : OUT  std_logic;
-			reg_mux: OUT  std_logic_vector (1 downto 0);
+			reg_mux: OUT  std_logic;
          bneq_alu : IN  std_logic;
          blt_alu : IN  std_logic;
          en_mar : OUT  std_logic;
@@ -152,7 +152,9 @@ architecture Behavioral of top is
          r_w_mem : OUT  std_logic;
          en_mem : OUT  std_logic;
          en_reg : OUT  std_logic;
-         r_w_reg : OUT  std_logic
+         r_w_reg : OUT  std_logic;
+			sel_mux_addr1  : OUT std_logic; 
+         sel_mux_addr  : OUT std_logic
         );
     END COMPONENT;
  
@@ -188,7 +190,7 @@ signal dout_mdr : std_logic_vector(31 downto 0);
 signal en_reg, r_w_reg :std_logic; 
 
 signal sel_mux_alu :std_logic; 
-signal sel_mux_reg :std_logic_vector (1 downto 0);
+signal sel_mux_reg :std_logic;
 
 signal output_mux_alu : std_logic_vector(31 downto 0);
 signal output_mux_reg : std_logic_vector(31 downto 0);
@@ -206,7 +208,12 @@ signal dout_y : std_logic_vector(31 downto 0);
 signal r_w_mdr :std_logic; 
 signal r_w_mar :std_logic; 
 
- 			   
+signal sel_mux_addr1  :std_logic; 
+signal sel_mux_addr  :std_logic; 
+signal output_mux_addr1 : std_logic_vector(2 downto 0);
+signal output_mux_addr  : std_logic_vector(2 downto 0);
+
+  			   
 begin 
  ctl: control_unit PORT MAP (
           clk => clk,
@@ -231,8 +238,10 @@ begin
           r_w_mem => r_w_mem, -- to mem
           en_mem => en_mem, -- to mem
           en_reg => en_reg, -- to reg
-          r_w_reg => r_w_reg -- to reg
-        );
+          r_w_reg => r_w_reg, -- to reg
+        	sel_mux_addr1  => sel_mux_addr1,
+         sel_mux_addr  => sel_mux_addr
+		  );
 	pc: program_counter port map(
 		 clk => clk,
 	    reset =>   reset,
@@ -275,8 +284,7 @@ begin
 -- XOR R5 R1 R2 : R5 = R1 xor R2
 -- ADDI R5 R1 0x50 : R5 = R1 + 0x50
 -- BNEQ R2 R5 i4 : if (R2 != R5) jump to instruction i4
--- BLT R3 R4 i9 : if (R3 < R4) jump to insturtion i9
-
+-- BLT R3 R4 i9 : if (R3 < R4) jump to insturtion i944
   alu2: ALU PORT MAP (
           clk => clk,
           reset => reset,
@@ -287,6 +295,14 @@ begin
           bneq => bneq_alu, -- to control
 			 blt=> blt_alu -- to control
 			 );
+	 
+	mux_reg: mux PORT MAP (
+          inputA => dout_mem,
+          inputB => dout_z,
+          sel => sel_mux_reg,
+          output => output_mux_reg
+        );
+		  
 	z: reg32bits PORT MAP (
           clk => clk,
 			 reset => reset,
@@ -295,21 +311,25 @@ begin
           din => alu_out, -- from register
           dout => dout_z -- to memory
         );
-		  		 
-	 mux_reg: mux3to1 PORT MAP (
-          inputA => dout_mem,
-          inputB =>  dout_z,
-			 inputC =>  dout_y,
-          sel => sel_mux_reg,
-          output => output_mux_reg
-        );		 
+	mux_reg_addr: mux3b PORT MAP (
+          inputA => op1_ird, -- sel = 1 when alu1  to write to it, and when jump0
+          inputB => op2_ird, -- sel = 0 when decode
+          sel => sel_mux_addr1,
+          output => output_mux_addr1
+        ); 
+	mux_reg_addr2: mux3b PORT MAP (
+          inputA => output_mux_addr1, --sel = 1 when decode, alu1 
+          inputB => op3_ird(2 downto 0), --sel = 0 when alu0 
+          sel => sel_mux_addr,
+          output => output_mux_addr
+        );		  
 	registers: register_file PORT MAP (
           clk => clk,
           reset => reset,
           en => en_reg,-- from control unit
           r_w => r_w_reg,-- from control unit
           dout => dout_reg , -- to memory or alu
-          addr => op1_ird, -- from the instruction
+          addr => output_mux_addr, -- from the instruction
           din => output_mux_reg  -- either from mem or result of ALU
         );
 		  --reslut alu

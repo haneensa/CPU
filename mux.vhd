@@ -2,12 +2,11 @@
 -- Engineer: 
 -- Create Date:    17:30:18 12/19/2014 
 -- Module Name:    mux - Behavioral 
--- Description: Binary Mux
+-- Description: Binary Mux, 32 bits wide
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.std_logic_unsigned.all;
-
+use IEEE.STD_LOGIC_UNSIGNED.all;
 
 entity mux is
 port (
@@ -30,4 +29,3 @@ begin
   end process;
 
 end Behavioral;
-

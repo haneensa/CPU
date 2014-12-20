@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Xst" timeStamp="Fri Dec 19 18:25:29 2014">
+  <application stringID="Xst" timeStamp="Sat Dec 20 13:08:55 2014">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -123,11 +123,10 @@
       </section>
       <section stringID="XST_PRIMITIVE_AND_BLACK_BOX_USAGE">
         <item dataType="int" stringID="XST_BELS" value="32">
-          <item dataType="int" stringID="XST_LUT2" value="25"/>
-          <item dataType="int" stringID="XST_LUT3" value="7"/>
+          <item dataType="int" stringID="XST_LUT3" value="32"/>
         </item>
-        <item dataType="int" stringID="XST_IO_BUFFERS" value="72">
-          <item dataType="int" stringID="XST_IBUF" value="40"/>
+        <item dataType="int" stringID="XST_IO_BUFFERS" value="97">
+          <item dataType="int" stringID="XST_IBUF" value="65"/>
           <item dataType="int" stringID="XST_OBUF" value="32"/>
         </item>
       </section>
@@ -141,8 +140,8 @@
       <item AVAILABLE="32" dataType="int" label="Number with an unused LUT" stringID="XST_NUMBER_WITH_AN_UNUSED_LUT" value="0"/>
       <item AVAILABLE="32" dataType="int" label="Number of fully used LUT-FF pairs" stringID="XST_NUMBER_OF_FULLY_USED_LUTFF_PAIRS" value="0"/>
       <item dataType="int" label="Number of unique control sets" stringID="XST_NUMBER_OF_UNIQUE_CONTROL_SETS" value="0"/>
-      <item dataType="int" label="Number of IOs" stringID="XST_NUMBER_OF_IOS" value="72"/>
-      <item AVAILABLE="210" dataType="int" label="Number of bonded IOBs" stringID="XST_NUMBER_OF_BONDED_IOBS" value="72"/>
+      <item dataType="int" label="Number of IOs" stringID="XST_NUMBER_OF_IOS" value="97"/>
+      <item AVAILABLE="210" dataType="int" label="Number of bonded IOBs" stringID="XST_NUMBER_OF_BONDED_IOBS" value="97"/>
     </section>
     <section stringID="XST_PARTITION_RESOURCE_SUMMARY">
       <section stringID="XST_NO_PARTITIONS_WERE_FOUND_IN_THIS_DESIGN"/>

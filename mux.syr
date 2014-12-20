@@ -10,7 +10,7 @@ Total CPU time to Xst completion: 0.09 secs
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: mux.prj
 
@@ -189,10 +189,9 @@ Top Level Output File Name         : mux.ngc
 Primitive and Black Box Usage:
 ------------------------------
 # BELS                             : 32
-#      LUT2                        : 25
-#      LUT3                        : 7
-# IO Buffers                       : 72
-#      IBUF                        : 40
+#      LUT3                        : 32
+# IO Buffers                       : 97
+#      IBUF                        : 65
 #      OBUF                        : 32
 
 Device utilization summary:
@@ -213,8 +212,8 @@ Slice Logic Distribution:
    Number of unique control sets:         0
 
 IO Utilization: 
- Number of IOs:                          72
- Number of bonded IOBs:                  72  out of    210    34%  
+ Number of IOs:                          97
+ Number of bonded IOBs:                  97  out of    210    46%  
 
 Specific Feature Utilization:
 
@@ -257,19 +256,19 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 71 / 32
+  Total number of paths / destination ports: 96 / 32
 -------------------------------------------------------------------------
 Delay:               1.138ns (Levels of Logic = 3)
   Source:            sel (PAD)
-  Destination:       output<6> (PAD)
+  Destination:       output<31> (PAD)
 
-  Data Path: sel to output<6>
+  Data Path: sel to output<31>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O            32   0.001   0.701  sel_IBUF (sel_IBUF)
-     LUT3:I0->O            1   0.097   0.339  Mmux_output291 (output_6_OBUF)
-     OBUF:I->O                 0.000          output_6_OBUF (output<6>)
+     LUT3:I0->O            1   0.097   0.339  Mmux_output321 (output_9_OBUF)
+     OBUF:I->O                 0.000          output_9_OBUF (output<9>)
     ----------------------------------------
     Total                      1.138ns (0.098ns logic, 1.040ns route)
                                        (8.6% logic, 91.4% route)
@@ -283,11 +282,11 @@ Cross Clock Domains Report:
 
 
 Total REAL time to Xst completion: 40.00 secs
-Total CPU time to Xst completion: 39.59 secs
+Total CPU time to Xst completion: 39.48 secs
  
 --> 
 
-Total memory usage is 753300 kilobytes
+Total memory usage is 757300 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

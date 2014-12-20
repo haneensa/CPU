@@ -1,6 +1,7 @@
 vhdl isim_temp "register_file.vhd"
 vhdl isim_temp "reg32bits.vhd"
 vhdl isim_temp "program_counter.vhd"
+vhdl isim_temp "mux3b.vhd"
 vhdl isim_temp "mux.vhd"
 vhdl isim_temp "memory_address_register.vhd"
 vhdl isim_temp "memory.vhd"
