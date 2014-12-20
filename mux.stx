@@ -1,0 +1,64 @@
+Release 14.5 - xst P.58f (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Users/aisha/CPU1/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to C:/Users/aisha/CPU1/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: mux.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\aisha\CPU1\mux.vhd" into library work
+Parsing entity <mux>.
+Parsing architecture <Behavioral> of entity <mux>.
+Parsing VHDL file "C:\Users\aisha\CPU1\mux3to1.vhd" into library work
+Parsing entity <mux3to1>.
+ERROR:HDLCompiler:580 - "C:\Users\aisha\CPU1\mux3to1.vhd" Line 20: Mismatch on label ; expected mux3to1
+ERROR:HDLCompiler:854 - "C:\Users\aisha\CPU1\mux3to1.vhd" Line 12: Unit <mux3to1> ignored due to previous errors.
+Parsing architecture <Behavioral> of entity <mux>.
+ERROR:HDLCompiler:1731 - "C:\Users\aisha\CPU1\mux3to1.vhd" Line 28: found '0' definitions of operator "=", cannot determine exact overloaded matching definition for "="
+ERROR:HDLCompiler:69 - "C:\Users\aisha\CPU1\mux3to1.vhd" Line 31: <inputc> is not declared.
+ERROR:HDLCompiler:1731 - "C:\Users\aisha\CPU1\mux3to1.vhd" Line 30: found '0' definitions of operator "=", cannot determine exact overloaded matching definition for "="
+ERROR:HDLCompiler:69 - "C:\Users\aisha\CPU1\mux3to1.vhd" Line 33: <inputc> is not declared.
+ERROR:HDLCompiler:1731 - "C:\Users\aisha\CPU1\mux3to1.vhd" Line 26: found '0' definitions of operator "=", cannot determine exact overloaded matching definition for "="
+ERROR:HDLCompiler:854 - "C:\Users\aisha\CPU1\mux3to1.vhd" Line 22: Unit <behavioral> ignored due to previous errors.
+VHDL file C:\Users\aisha\CPU1\mux3to1.vhd ignored due to errors
+--> 
+
+Total memory usage is 205432 kilobytes
+
+Number of errors   :    8 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

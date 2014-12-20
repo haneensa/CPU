@@ -26,6 +26,15 @@ architecture Behavioral of top is
          output : OUT  std_logic_vector(31 downto 0)
         );
     END COMPONENT;
+	 COMPONENT mux3to1
+    PORT(
+         inputA : IN  std_logic_vector(31 downto 0);
+         inputB : IN  std_logic_vector(31 downto 0);
+			inputC : IN  std_logic_vector(31 downto 0);
+			sel : IN  std_logic_vector (1 downto 0);
+         output : OUT  std_logic_vector(31 downto 0)
+        );
+    END COMPONENT;
 	 
  COMPONENT program_counter
     PORT(
@@ -133,7 +142,7 @@ architecture Behavioral of top is
 			en_z : OUT  std_logic;
 			r_w_y : OUT  std_logic;
 			en_y : OUT  std_logic;
-			reg_mux: OUT  std_logic;
+			reg_mux: OUT  std_logic_vector (1 downto 0);
          bneq_alu : IN  std_logic;
          blt_alu : IN  std_logic;
          en_mar : OUT  std_logic;
@@ -179,7 +188,7 @@ signal dout_mdr : std_logic_vector(31 downto 0);
 signal en_reg, r_w_reg :std_logic; 
 
 signal sel_mux_alu :std_logic; 
-signal sel_mux_reg :std_logic; 
+signal sel_mux_reg :std_logic_vector (1 downto 0);
 
 signal output_mux_alu : std_logic_vector(31 downto 0);
 signal output_mux_reg : std_logic_vector(31 downto 0);
@@ -287,9 +296,10 @@ begin
           dout => dout_z -- to memory
         );
 		  		 
-	 mux_reg: mux PORT MAP (
+	 mux_reg: mux3to1 PORT MAP (
           inputA => dout_mem,
           inputB =>  dout_z,
+			 inputC =>  dout_y,
           sel => sel_mux_reg,
           output => output_mux_reg
         );		 

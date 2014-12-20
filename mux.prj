@@ -1,1 +1,2 @@
 vhdl work "mux.vhd"
+vhdl work "mux3to1.vhd"

@@ -36,7 +36,7 @@ port(
 	 	 r_w_y : OUT  std_logic;
 	 en_y : OUT  std_logic;
 
-	 reg_mux: OUT  std_logic;
+	 reg_mux: OUT  std_logic_vector (1 downto 0);
 	-- this will affect program counter 	 
 	-- if set then ctl_pr = 1 and state == jump
 
@@ -122,8 +122,9 @@ begin
   		   else '0';
   alu_mux <= '0'    when opcode = "001"
   		   else '1';	 
-  reg_mux <= '1'    when state =  load1 and  opcode = "010" 
-  		   else '0';
+  reg_mux <= "00"    when state =  load1 and  opcode = "010"; 
+  reg_mux <= "01"    when state = alu0  or state = alu1
+  		   else "10";
 		
   en_irm <= '1'    when state =  fetch
   		   else '0';
@@ -132,7 +133,7 @@ begin
   en_reg <= '1'    when state =  decode or state =  load0 or state = store0 or state = alu0  or state = alu1
 						 or state =  load1 or state = store1  or state = jump0  or state = jump1
   		   else '0';
-  r_w_reg <= '1'    when state =  load1 or state = alu1  or state = jump0
+  r_w_reg <= '1'    when state =  load1 or state = alu1  
   		   else '0';		
   r_w_z <= '1'    when state = alu0 
   		   else '0';	
