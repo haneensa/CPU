@@ -1,4 +1,4 @@
-Running: C:\Xilinx\14.5\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/aisha/CPU1/top_tb_isim_beh.exe -prj C:/Users/aisha/CPU1/top_tb_beh.prj work.top_tb 
+Running: C:\Xilinx\14.5\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/aisha/CPU1/top_tb_isim_beh.exe -prj C:/Users/aisha/CPU1/top_tb_beh.prj top_tb 
 ISim P.58f (signature 0x7708f090)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
@@ -42,5 +42,5 @@ Time Resolution for simulation is 1ps.
 Waiting for 10 sub-compilation(s) to finish...
 Compiled 30 VHDL Units
 Built simulation executable C:/Users/aisha/CPU1/top_tb_isim_beh.exe
-Fuse Memory Usage: 35880 KB
-Fuse CPU Usage: 843 ms
+Fuse Memory Usage: 35988 KB
+Fuse CPU Usage: 874 ms

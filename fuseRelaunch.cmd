@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "C:/Users/aisha/CPU1/top_tb_isim_beh.exe" -prj "C:/Users/aisha/CPU1/top_tb_beh.prj" "work.top_tb" 
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/aisha/CPU1/top_tb_isim_beh.exe" -prj "C:/Users/aisha/CPU1/top_tb_beh.prj" "top_tb" 

@@ -361,7 +361,7 @@ begin
 			 reset => reset,
           en => en_mdr,-- from control unit
 			 r_w => r_w_mdr,-- from control unit
-          din => dout_reg, -- from register
+          din => dout_y, -- from register
           dout => dout_mdr -- to memory
         );
 	

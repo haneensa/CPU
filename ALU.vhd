@@ -24,7 +24,7 @@ end ALU;
 architecture Behavioral of ALU is
 
 begin
-   process (opcode,dinA, dinB )   is
+   process (dinA, dinB,  opcode)   is
 	begin
 		case  opcode  is 
 			when "000" =>
@@ -37,22 +37,25 @@ begin
 					blt <= 'Z';
 			when "100" => --blt
 			   if  (dinA < dinB) then -- is A < B?
-				 	 blt <= '1';
-				else 
-					 blt <= '0';
+						 blt <= '1';
+					else 
+						 blt <= '0';
 				end if;
+				bneq <= 'Z';
 				result <= "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
 			when "101" => --bneq
 				if ((dinA - dinB) = 0) then   -- is A==B?   
-				   bneq <= '1';
-				else 
-					bneq <= '0';
+						bneq <= '0';
+					else 
+						bneq <= '1';
 				end if; 
+				blt <= 'Z';
 				result <= "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
 			when others =>
 				bneq <= 'Z';
-					blt <= 'Z';
+				blt <= 'Z';
 				result <= "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
 		end case;
+
   end process;
 end Behavioral;

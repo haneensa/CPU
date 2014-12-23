@@ -34,7 +34,7 @@ begin
 	reg_file(9) <= x"2904"; -- initialize
 	reg_file(10) <= x"AA84"; -- initialize
 	reg_file(11) <= x"2484"; -- initialize
-	reg_file(12) <= x"A704"; -- initialize
+	reg_file(12) <= x"A703"; -- initialize
 	reg_file(13) <= x"C000"; -- initialize
 	reg_file(14) <= x"0000"; -- initialize
 	reg_file(15) <= x"0000"; -- initialize

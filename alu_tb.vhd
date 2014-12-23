@@ -1,18 +1,7 @@
---------------------------------------------------------------------------------
--- Engineer:
--- Create Date:   21:06:42 12/16/2014
--- Module Name:   C:/Users/aisha/CPU1/alu_tb.vhd
--- Project Name:  CPU1
--- Description:   
 -- VHDL Test Bench Created by ISE for module: ALU
---------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
- 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---USE ieee.numeric_std.ALL;
- 
+
 ENTITY alu_tb IS
 END alu_tb;
  
