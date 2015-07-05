@@ -1,2 +1,0 @@
-vhdl isim_temp "memory.vhd"
-vhdl isim_temp "memory_tb.vhd"

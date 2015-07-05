@@ -1,2 +1,0 @@
-vhdtdtfi -lib work instruction_register.vhd -prj CPU1 -o instruction_register.spl -module instruction_register -template C:/Xilinx/14.5/ISE_DS/ISE//data/splfile.tft -deleteonerror 
-spl2sym -intstyle ise -family aartix7 instruction_register.spl C:/Users/aisha/CPU1/instruction_register.sym 

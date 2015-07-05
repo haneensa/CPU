@@ -1,2 +1,0 @@
-vhdl work "ipcore_dir/main_memory.vhd"
-vhdl work "instruction_memory.vhd"
