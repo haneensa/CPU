@@ -1,5 +1,5 @@
 # Description
-In this project, a 32-bit non-pipelined processor was design and implementation using VHDL. The processor is tested using a program stored in an instruction memory of type ROM (Read Only Mem- ory). 
+In this project, a 32-bit non-pipelined processor was design and implementation using VHDL. The processor is tested using a program stored in an instruction memory of type ROM (Read Only Memory). 
 # Software used:
 ISE/ModelSim
 
